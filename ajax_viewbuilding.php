@@ -14,6 +14,20 @@ if(!$fgmembersite->CheckLogin())
         <script src="scripts/fixed_table_header/jquery.min.js"></script>
         <script src="scripts/fixed_table_header/jquery.fixedheadertable.min.js"></script>
         <script src="scripts/fixed_table_header/demo.js"></script>
+		<script>
+		function show_confirm()
+{
+var r=confirm("Are you sure want to delete");
+if (r==true)
+  {
+  return true;
+  }
+else
+  {
+  return false;
+  }
+}
+</script>
 <?php
 	$fgmembersite->DBLogin();
 //PAGE NUMBER, RESULTS PER PAGE, AND OFFSET OF THE RESULTS
@@ -74,9 +88,8 @@ echo '
 		$emp_id = $r["id"];
 		$building_code=$r["building_code"];
 		$building_type=$r["building_type"];
-		
         echo '<tr><td>'.$content.'</td><td>'.$building_code.'</td><td>'.$building_code.'</td><td>'.$building_code.'</td><td><a href=edit_building.php?id='.$emp_id.'><img src="images/user_edit.png"/></a></td>
-		<td><a href=edit_building.php?id='.$emp_id.'><img src="images/user_edit.png"/></a></td></tr>';
+		<td><a href=view_building.php?delete_id='.$emp_id.'&delete=1><img src="images/delete.png" onclick="return show_confirm()"/></a></td></tr>';
 	
     }
     echo '</tbody></table>';
