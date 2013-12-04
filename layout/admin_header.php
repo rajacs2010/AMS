@@ -193,46 +193,27 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 				<a href="#">Building Management System</a>
 				<ul>
 					<li class="current">
-						<a href="#">menu item</a>
+						<a href="#">Value Sets</a>
 						<ul>
-							<li class="current"><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
+							<li class="current"><a href="state.php">State</a></li>
+							<li><a href="city.php">City</a></li>
+							<li><a href="building_type.php">Building Type</a></li>
+							<li><a href="currency.php">Currency</a></li>
 						</ul>
 
 					</li>
 					<li class="current">
-						<a href="#">long menu item sets sub width</a>
+						<a href="#">Master data</a>
 						<ul>
-							<li class="current"><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
+							<li class="current"><a href="building.php">Building</a></li>
+							<li><a href="generator.php">Generator</a></li>
+							<li><a href="generator_maintain.php">Generator Maintenance</a></li>
+							<li><a href="diesel.php">Diesel Consumption</a></li>
+							<li><a href="nepa.php">Nepa</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="#">menu item</a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">menu item</a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
+					
+					
 				</ul>
 			</li>
 				<!---- second menu end---->

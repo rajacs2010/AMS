@@ -41,10 +41,7 @@ $result=mysql_query("SELECT a.id  as id ,a.name,b.name as state_name FROM city a
 <?php
 if($_GET["selvalue_empcode"])
 {
-$mysql_hostname = "localhost";
-$mysql_user = "root";
-$mysql_password = "";
-$mysql_database = "fmcl_host";
+$fgmembersite->DBLogin();
 $bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
 or die("Opps some thing went wrong");
 mysql_select_db($mysql_database, $bd) or die("Opps some thing went wrong");
@@ -62,10 +59,7 @@ while($row = mysql_fetch_array($result_emp_id))
 <?php
 if($_GET["selvalue_incharge_empcode"])
 {
-$mysql_hostname = "localhost";
-$mysql_user = "root";
-$mysql_password = "";
-$mysql_database = "fmcl_host";
+$fgmembersite->DBLogin();
 $bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
 or die("Opps some thing went wrong");
 mysql_select_db($mysql_database, $bd) or die("Opps some thing went wrong");
