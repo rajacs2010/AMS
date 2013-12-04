@@ -208,8 +208,7 @@ Building Type
 </div>
 
 <?php
-
-
+$footerfile='./layout/footer.php';
 if(file_exists($footerfile))
 {
 include_once($footerfile);

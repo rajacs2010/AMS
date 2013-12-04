@@ -145,7 +145,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 				<a href="#">Admin Management System</a>
 				<ul>
 					<li class="current">
-						<a href="#">menu item</a>
+						<a href="#">Value Sets</a>
 						<ul>
 							<li class="current"><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
@@ -156,7 +156,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 
 					</li>
 					<li class="current">
-						<a href="#">long menu item sets sub width</a>
+						<a href="#">Master Data</a>
 						<ul>
 							<li class="current"><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
@@ -165,26 +165,8 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 							<li><a href="#">menu item</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="#">Building Management System </a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">menu item</a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
+				
+					
 				</ul>
 			</li>
 			<!---- first menu end------>
@@ -203,7 +185,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 
 					</li>
 					<li class="current">
-						<a href="#">Master data</a>
+						<a href="#">Master Data</a>
 						<ul>
 							<li class="current"><a href="building.php">Building</a></li>
 							<li><a href="generator.php">Generator</a></li>
@@ -222,7 +204,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 				<a href="#">Fleet Management System</a>
 				<ul>
 					<li class="current">
-						<a href="#">menu item</a>
+						<a href="#">Value Sets</a>
 						<ul>
 							<li class="current"><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
@@ -233,7 +215,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 
 					</li>
 					<li class="current">
-						<a href="#">long menu item sets sub width</a>
+						<a href="#">Master Data</a>
 						<ul>
 							<li class="current"><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
@@ -243,7 +225,7 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 						</ul>
 					</li>
 					<li>
-						<a href="#">menu item</a>
+						<a href="#">Value </a>
 						<ul>
 							<li><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
