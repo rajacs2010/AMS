@@ -32,7 +32,7 @@ background:#dddddd;
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#saleagreement').change(function() {
+    $('#car_reg_attach').change(function() {
 	
 var existing = new Array();
 var checkFile = new Array();
@@ -41,9 +41,9 @@ var fileUrl = new Array();
 var counter = 0;
 for (var i = 0; i < 1; i++) {
     (function(index){
-        file[index] = document.getElementById('saleagreement').files[0];
+        file[index] = document.getElementById('car_reg_attach').files[0];
         if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
+            fileUrl[index] = 'fms_uploads/' + file[index].name;
             checkFile[index] = new XMLHttpRequest();
             checkFile[index].onreadystatechange = function() {
                 if (checkFile[index].readyState == 4) {
@@ -61,7 +61,7 @@ for (var i = 0; i < 1; i++) {
                             //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
                         if (existing.indexOf(true) == -1) {
                             //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("saleagreement").value;
+							var filenamee=document.getElementById("car_reg_attach").value;
 							var extension=filenamee.split('.').pop();
 							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
 							{
@@ -70,7 +70,7 @@ for (var i = 0; i < 1; i++) {
 							else
 							{
 							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("saleagreement").value="";
+							document.getElementById("car_reg_attach").value="";
 							return false;
 							}
                        //return true; 
@@ -79,7 +79,7 @@ for (var i = 0; i < 1; i++) {
                             //list filenames and/or upload field numbers of the files that already exist on server
                             //   ->> inform user... 
 							alert("The file name already exits");
-							document.getElementById("saleagreement").value="";
+							document.getElementById("car_reg_attach").value="";
                             return false;
                         }
                     }
@@ -97,7 +97,7 @@ for (var i = 0; i < 1; i++) {
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#leasedeed').change(function() {
+    $('#insurance_attach').change(function() {
 var existing = new Array();
 var checkFile = new Array();
 var file = new Array();
@@ -105,9 +105,9 @@ var fileUrl = new Array();
 var counter = 0;
 for (var i = 0; i < 1; i++) {
     (function(index){
-        file[index] = document.getElementById('leasedeed').files[0];
+        file[index] = document.getElementById('insurance_attach').files[0];
         if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
+            fileUrl[index] = 'fms_uploads/' + file[index].name;
             checkFile[index] = new XMLHttpRequest();
             checkFile[index].onreadystatechange = function() {
                 if (checkFile[index].readyState == 4) {
@@ -125,7 +125,7 @@ for (var i = 0; i < 1; i++) {
                             //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
                         if (existing.indexOf(true) == -1) {
                             //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("leasedeed").value;
+							var filenamee=document.getElementById("insurance_attach").value;
 							var extension=filenamee.split('.').pop();
 							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
 							{
@@ -134,7 +134,7 @@ for (var i = 0; i < 1; i++) {
 							else
 							{
 							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("leasedeed").value="";
+							document.getElementById("insurance_attach").value="";
 							return false;
 							}
                        //return true; 
@@ -143,7 +143,7 @@ for (var i = 0; i < 1; i++) {
                             //list filenames and/or upload field numbers of the files that already exist on server
                             //   ->> inform user... 
 							alert("The file name already exits");
-							document.getElementById("leasedeed").value="";
+							document.getElementById("insurance_attach").value="";
                             return false;
                         }
                     }
@@ -160,7 +160,7 @@ for (var i = 0; i < 1; i++) {
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#insuranceagreement').change(function() {
+    $('#tax_attach').change(function() {
 var existing = new Array();
 var checkFile = new Array();
 var file = new Array();
@@ -168,9 +168,9 @@ var fileUrl = new Array();
 var counter = 0;
 for (var i = 0; i < 1; i++) {
     (function(index){
-        file[index] = document.getElementById('insuranceagreement').files[0];
+        file[index] = document.getElementById('tax_attach').files[0];
         if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
+            fileUrl[index] = 'fms_uploads/' + file[index].name;
             checkFile[index] = new XMLHttpRequest();
             checkFile[index].onreadystatechange = function() {
                 if (checkFile[index].readyState == 4) {
@@ -188,7 +188,7 @@ for (var i = 0; i < 1; i++) {
                             //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
                         if (existing.indexOf(true) == -1) {
                             //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("insuranceagreement").value;
+							var filenamee=document.getElementById("tax_attach").value;
 							var extension=filenamee.split('.').pop();
 							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
 							{
@@ -197,7 +197,7 @@ for (var i = 0; i < 1; i++) {
 							else
 							{
 							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("insuranceagreement").value="";
+							document.getElementById("tax_attach").value="";
 							return false;
 							}
                        //return true; 
@@ -206,7 +206,7 @@ for (var i = 0; i < 1; i++) {
                             //list filenames and/or upload field numbers of the files that already exist on server
                             //   ->> inform user... 
 							alert("The file name already exits");
-							document.getElementById("insuranceagreement").value="";
+							document.getElementById("tax_attach").value="";
                             return false;
                         }
                     }
@@ -223,7 +223,7 @@ for (var i = 0; i < 1; i++) {
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#attach4').change(function() {
+    $('#pollution_attach').change(function() {
 var existing = new Array();
 var checkFile = new Array();
 var file = new Array();
@@ -231,9 +231,9 @@ var fileUrl = new Array();
 var counter = 0;
 for (var i = 0; i < 1; i++) {
     (function(index){
-        file[index] = document.getElementById('attach4').files[0];
+        file[index] = document.getElementById('pollution_attach').files[0];
         if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
+            fileUrl[index] = 'fms_uploads/' + file[index].name;
             checkFile[index] = new XMLHttpRequest();
             checkFile[index].onreadystatechange = function() {
                 if (checkFile[index].readyState == 4) {
@@ -251,7 +251,7 @@ for (var i = 0; i < 1; i++) {
                             //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
                         if (existing.indexOf(true) == -1) {
                             //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("attach4").value;
+							var filenamee=document.getElementById("pollution_attach").value;
 							var extension=filenamee.split('.').pop();
 							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
 							{
@@ -260,7 +260,7 @@ for (var i = 0; i < 1; i++) {
 							else
 							{
 							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("attach4").value="";
+							document.getElementById("pollution_attach").value="";
 							return false;
 							}
                        //return true; 
@@ -269,7 +269,7 @@ for (var i = 0; i < 1; i++) {
                             //list filenames and/or upload field numbers of the files that already exist on server
                             //   ->> inform user... 
 							alert("The file name already exits");
-							document.getElementById("attach4").value="";
+							document.getElementById("pollution_attach").value="";
                             return false;
                         }
                     }
@@ -286,7 +286,7 @@ for (var i = 0; i < 1; i++) {
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#attach5').change(function() {
+    $('#fitness_attach').change(function() {
 var existing = new Array();
 var checkFile = new Array();
 var file = new Array();
@@ -294,9 +294,9 @@ var fileUrl = new Array();
 var counter = 0;
 for (var i = 0; i < 1; i++) {
     (function(index){
-        file[index] = document.getElementById('attach5').files[0];
+        file[index] = document.getElementById('fitness_attach').files[0];
         if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
+            fileUrl[index] = 'fms_uploads/' + file[index].name;
             checkFile[index] = new XMLHttpRequest();
             checkFile[index].onreadystatechange = function() {
                 if (checkFile[index].readyState == 4) {
@@ -314,7 +314,7 @@ for (var i = 0; i < 1; i++) {
                             //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
                         if (existing.indexOf(true) == -1) {
                             //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("attach5").value;
+							var filenamee=document.getElementById("fitness_attach").value;
 							var extension=filenamee.split('.').pop();
 							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
 							{
@@ -323,7 +323,7 @@ for (var i = 0; i < 1; i++) {
 							else
 							{
 							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("attach5").value="";
+							document.getElementById("fitness_attach").value="";
 							return false;
 							}
                        //return true; 
@@ -332,196 +332,7 @@ for (var i = 0; i < 1; i++) {
                             //list filenames and/or upload field numbers of the files that already exist on server
                             //   ->> inform user... 
 							alert("The file name already exits");
-							document.getElementById("attach5").value="";
-                            return false;
-                        }
-                    }
-                }
-            }
-            checkFile[index].open('HEAD', fileUrl[index], true);
-            checkFile[index].send();
-        }
-    })(i);
-}
-      return false;
-   });
- }); 
-</script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#attach6').change(function() {
-var existing = new Array();
-var checkFile = new Array();
-var file = new Array();
-var fileUrl = new Array();
-var counter = 0;
-for (var i = 0; i < 1; i++) {
-    (function(index){
-        file[index] = document.getElementById('attach6').files[0];
-        if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
-            checkFile[index] = new XMLHttpRequest();
-            checkFile[index].onreadystatechange = function() {
-                if (checkFile[index].readyState == 4) {
-                    if (checkFile[index].status == 200) {
-                        existing[index] = true; 
-                        counter += 1;
-                    }
-                    else {
-                        existing[index] = false;
-                        counter += 1;
-                    }
-                    if (counter == fileUrl.length) { 
-                            //existing.length of the array "true, false,,true" (i.e. with one undefined value) would deliver "4". 
-                            //therefore we have to check for the number of set variables in the string rather than the strings length. 
-                            //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
-                        if (existing.indexOf(true) == -1) {
-                            //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("attach6").value;
-							var extension=filenamee.split('.').pop();
-							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
-							{
-							return true;
-							}
-							else
-							{
-							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("attach6").value="";
-							return false;
-							}
-                       //return true; 
-                        }
-                        else {
-                            //list filenames and/or upload field numbers of the files that already exist on server
-                            //   ->> inform user... 
-							alert("The file name already exits");
-							document.getElementById("attach6").value="";
-                            return false;
-                        }
-                    }
-                }
-            }
-            checkFile[index].open('HEAD', fileUrl[index], true);
-            checkFile[index].send();
-        }
-    })(i);
-}
-      return false;
-   });
- }); 
-</script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#attach7').change(function() {
-var existing = new Array();
-var checkFile = new Array();
-var file = new Array();
-var fileUrl = new Array();
-var counter = 0;
-for (var i = 0; i < 1; i++) {
-    (function(index){
-        file[index] = document.getElementById('attach7').files[0];
-        if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
-            checkFile[index] = new XMLHttpRequest();
-            checkFile[index].onreadystatechange = function() {
-                if (checkFile[index].readyState == 4) {
-                    if (checkFile[index].status == 200) {
-                        existing[index] = true; 
-                        counter += 1;
-                    }
-                    else {
-                        existing[index] = false;
-                        counter += 1;
-                    }
-                    if (counter == fileUrl.length) { 
-                            //existing.length of the array "true, false,,true" (i.e. with one undefined value) would deliver "4". 
-                            //therefore we have to check for the number of set variables in the string rather than the strings length. 
-                            //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
-                        if (existing.indexOf(true) == -1) {
-                            //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("attach7").value;
-							var extension=filenamee.split('.').pop();
-							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
-							{
-							return true;
-							}
-							else
-							{
-							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("attach7").value="";
-							return false;
-							}
-                       //return true; 
-                        }
-                        else {
-                            //list filenames and/or upload field numbers of the files that already exist on server
-                            //   ->> inform user... 
-							alert("The file name already exits");
-							document.getElementById("attach7").value="";
-                            return false;
-                        }
-                    }
-                }
-            }
-            checkFile[index].open('HEAD', fileUrl[index], true);
-            checkFile[index].send();
-        }
-    })(i);
-}
-      return false;
-   });
- }); 
-</script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#attach8').change(function() {
-var existing = new Array();
-var checkFile = new Array();
-var file = new Array();
-var fileUrl = new Array();
-var counter = 0;
-for (var i = 0; i < 1; i++) {
-    (function(index){
-        file[index] = document.getElementById('attach8').files[0];
-        if(file[index]) {
-            fileUrl[index] = 'uploads/' + file[index].name;
-            checkFile[index] = new XMLHttpRequest();
-            checkFile[index].onreadystatechange = function() {
-                if (checkFile[index].readyState == 4) {
-                    if (checkFile[index].status == 200) {
-                        existing[index] = true; 
-                        counter += 1;
-                    }
-                    else {
-                        existing[index] = false;
-                        counter += 1;
-                    }
-                    if (counter == fileUrl.length) { 
-                            //existing.length of the array "true, false,,true" (i.e. with one undefined value) would deliver "4". 
-                            //therefore we have to check for the number of set variables in the string rather than the strings length. 
-                            //we use a counter for that purpose. everything after this point is only executed when the last file has been checked! 
-                        if (existing.indexOf(true) == -1) {
-                            //none of the files to be uploaded are already on server
-							var filenamee=document.getElementById("attach8").value;
-							var extension=filenamee.split('.').pop();
-							if ((extension=="pdf" ) || (extension=="png") || (extension=="jpg") ||(extension=="jpeg") ||(extension=="gif"))
-							{
-							return true;
-							}
-							else
-							{
-							alert("Invalid File extension Only (pdf,gif,jpeg,png) are allowed");
-							document.getElementById("attach8").value="";
-							return false;
-							}
-                       //return true; 
-                        }
-                        else {
-                            //list filenames and/or upload field numbers of the files that already exist on server
-                            //   ->> inform user... 
-							alert("The file name already exits");
-							document.getElementById("attach8").value="";
+							document.getElementById("fitness_attach").value="";
                             return false;
                         }
                     }
@@ -539,42 +350,50 @@ for (var i = 0; i < 1; i++) {
 <script>
 function validateForm()
 {
-	var buildingname=document.getElementById("buildingname");
-	if(buildingname.value=="")
+	var vregno=document.getElementById("vregno");
+	if(vregno.value=="")
 	{
-	alert("Please enter the building name");
-	document.getElementById("buildingname").focus();
+	alert("Please enter the vehicle registration number");
+	document.getElementById("vregno").focus();
 	return false;
 	}
 	
-	var building_type=document.getElementById("building_type");
-	if(building_type.value==0)
+	var vdate=document.getElementById("vdate").value;
+	if(vdate==""||vdate==0 || !vdate)
 	{
-	alert("Please select the building type");
-	document.getElementById("building_type").focus();
+	alert("Please select the vehicle registration date");
+	document.getElementById("vdate").focus();
 	return false;
 	}
 	
-	var city=document.getElementById("city");
-	if(city.value==0)
+	var comp_id=document.getElementById("comp_id");
+	if(comp_id.value==0)
 	{
-	alert("Please select the city");
-	document.getElementById("city").focus();
-	return false;
-	}
-	var building_status=document.getElementById("building_status");
-	if(building_status.value==0)
-	{
-	alert("Please select owned/rented/lease ");
-	document.getElementById("building_status").focus();
+	alert("Please select the company");
+	document.getElementById("comp_id").focus();
 	return false;
 	}
 	
-	var datepurchase=document.getElementById("datepurchase").value;
-	if(datepurchase==""||datepurchase==0 || !datepurchase)
+	var insurance_number=document.getElementById("insurance_number");
+	if(insurance_number.value=="")
 	{
-	alert("Please select the datepurchase");
-	document.getElementById("datepurchase").focus();
+	alert("Please enter the insurance number");
+	document.getElementById("insurance_number").focus();
+	return false;
+	}
+	var insurance_company=document.getElementById("insurance_company");
+	if(insurance_company.value=="")
+	{
+	alert("Please enter the insurance company ");
+	document.getElementById("insurance_company").focus();
+	return false;
+	}
+	
+	var insurance_date=document.getElementById("insurance_date").value;
+	if(insurance_date==""||insurance_date==0 || !insurance_date)
+	{
+	alert("Please select the insurance date");
+	document.getElementById("insurance_date").focus();
 	return false;
 	}
 	
@@ -586,333 +405,223 @@ function validateForm()
 	return false;
 	}
 	
-	if(building_status.value==1||building_status.value==3)
+	var insurance_amount=document.getElementById("insurance_amount");
+	if(insurance_amount.value=="")
 	{
-	var cost=document.getElementById("cost");
-	if(cost.value=="")
-	{
-	alert("Please enter the cost");
-	document.getElementById("cost").focus();
+	alert("Please enter the insurance premium amount");
+	document.getElementById("insurance_amount").focus();
 	return false;
-	}
 	}
 	
-	if(building_status.value==2)
+	var insurance_duedate=document.getElementById("insurance_duedate").value;
+	if(insurance_duedate==""||insurance_duedate==0 || !insurance_duedate)
 	{
-	var rent=document.getElementById("rent");
-	if(rent.value=="")
-	{
-	alert("Please enter the rent");
-	document.getElementById("rent").focus();
+	alert("Please select the insurance renenwal due date");
+	document.getElementById("insurance_duedate").focus();
 	return false;
-	}
 	}
 	
-	if(building_status.value==2)
+	
+	var tax_number=document.getElementById("tax_number");
+	if(tax_number.value=="")
 	{
-	var periodfrom=document.getElementById("periodfrom");
-	if(periodfrom.value==0)
-	{
-	alert("Please select the period");
-	document.getElementById("periodfrom").focus();
+	alert("Please enter the tax number");
+	document.getElementById("tax_number").focus();
 	return false;
-	}
 	}
 	
-	if(building_status.value==1)
+	var tax_authority=document.getElementById("tax_authority");
+	if(tax_authority.value=="")
 	{
-	var purchasefrom=document.getElementById("purchasefrom");
-	if(purchasefrom.value=="")
-	{
-	alert("Please enter the purchasefrom");
-	document.getElementById("purchasefrom").focus();
+	alert("Please enter the tax authority");
+	document.getElementById("tax_authority").focus();
 	return false;
-	}
 	}
 
-	
-	if(building_status.value==2||building_status.value==3)
+	var tax_date=document.getElementById("tax_date").value;
+	if(tax_date==""||tax_date==0 || !tax_date)
 	{
-	var landlord=document.getElementById("landlord");
-	if(landlord.value=="")
-	{
-	alert("Please enter the landlord");
-	document.getElementById("landlord").focus();
+	alert("Please select the tax date");
+	document.getElementById("tax_date").focus();
 	return false;
 	}
 	
-	var contactperson=document.getElementById("contactperson");
-	if(contactperson.value=="")
+	var tax_currency=document.getElementById("tax_currency");
+	if(tax_currency.value==0)
 	{
-	alert("Please enter the contactperson");
-	document.getElementById("contactperson").focus();
+	alert("Please select the currency");
+	document.getElementById("tax_currency").focus();
+	return false;
+	}
+
+	var tax_amount=document.getElementById("tax_amount");
+	if(tax_amount.value=="")
+	{
+	alert("Please enter the tax amount");
+	document.getElementById("tax_amount").focus();
+	return false;
+	}
+
+	var tax_renewal_date=document.getElementById("tax_renewal_date").value;
+	if(tax_renewal_date==""||tax_renewal_date==0 || !tax_renewal_date)
+	{
+	alert("Please select the tax renewal date");
+	document.getElementById("tax_renewal_date").focus();
 	return false;
 	}
 	
-	var address1=document.getElementById("address1");
-	if(address1.value=="")
+	var fit_certificate_no=document.getElementById("fit_certificate_no");
+	if(fit_certificate_no.value=="")
 	{
-	alert("Please enter the address1");
-	document.getElementById("address1").focus();
+	alert("Please enter the Fitness certificate number");
+	document.getElementById("fit_certificate_no").focus();
 	return false;
 	}
 	
-	
-	var city_landlord=document.getElementById("city_landlord");
-	if(city_landlord.value==0)
+	var next_inspection_date=document.getElementById("next_inspection_date").value;
+	if(next_inspection_date==""||next_inspection_date==0 || !next_inspection_date)
 	{
-	alert("Please select the city");
-	document.getElementById("city_landlord").focus();
+	alert("Please select the next inspection date");
+	document.getElementById("next_inspection_date").focus();
 	return false;
 	}
 	
-	
-	var contactnumber=document.getElementById("contactnumber");
-	if(contactnumber.value=="")
+	var certification_currency=document.getElementById("certification_currency");
+	if(certification_currency.value==0)
 	{
-	alert("Please enter the contactnumber");
-	document.getElementById("contactnumber").focus();
+	alert("Please select the currency");
+	document.getElementById("certification_currency").focus();
 	return false;
 	}
 	
-	
-	var emailid=document.getElementById("emailid");
-	if(emailid.value=="")
+	var certification_cost=document.getElementById("certification_cost");
+	if(certification_cost.value=="")
 	{
-	alert("Please enter the emailid");
-	document.getElementById("emailid").focus();
+	alert("Please enter the fitness certification cost");
+	document.getElementById("certification_cost").focus();
 	return false;
 	}
 	
-	
-	var alternatenumber=document.getElementById("alternatenumber");
-	if(alternatenumber.value=="")
+	var pollution_certificate_no=document.getElementById("pollution_certificate_no");
+	if(pollution_certificate_no.value=="")
 	{
-	alert("Please enter the alternatenumber");
-	document.getElementById("alternatenumber").focus();
+	alert("Please enter the pollution certificate number");
+	document.getElementById("pollution_certificate_no").focus();
 	return false;
 	}
 	
-	var altperson=document.getElementById("altperson");
-	if(altperson.value=="")
+	var pollution_certificate_date=document.getElementById("pollution_certificate_date").value;
+	if(pollution_certificate_date==""||pollution_certificate_date==0 || !pollution_certificate_date)
 	{
-	alert("Please enter the alternate person");
-	document.getElementById("altpersont").focus();
+	alert("Please select the pollution certificate date");
+	document.getElementById("pollution_certificate_date").focus();
+	return false;
+	}
+	var pollution_inspection_date=document.getElementById("pollution_inspection_date").value;
+	if(pollution_inspection_date==""||pollution_inspection_date==0 || !pollution_inspection_date)
+	{
+	alert("Please select the next pollution inspection date");
+	document.getElementById("pollution_inspection_date").focus();
 	return false;
 	}
 	
-	var altpersonnumber=document.getElementById("altpersonnumber");
-	if(altpersonnumber.value=="")
+	var pollution_currency=document.getElementById("pollution_currency");
+	if(pollution_currency.value==0)
 	{
-	alert("Please enter the alternate person number");
-	document.getElementById("altpersonnumber").focus();
+	alert("Please select the pollution currency");
+	document.getElementById("pollution_currency").focus();
 	return false;
 	}
-	}
-	if(building_status.value==3)
+	var pollution_certificate_cost=document.getElementById("pollution_certificate_cost");
+	if(pollution_certificate_cost.value=="")
 	{
-	var renewaldate=document.getElementById("renewaldate");
-	if(renewaldate==""||renewaldate==0 || !renewaldate)
-	{
-	alert("Please select the renewal date");
-	document.getElementById("renewaldate").focus();
+	alert("Please enter the pollution certificate cost");
+	document.getElementById("pollution_certificate_cost").focus();
 	return false;
 	}
+	var make=document.getElementById("make");
+	if(make.value=="")
+	{
+	alert("Please enter the make");
+	document.getElementById("make").focus();
+	return false;
+	}
+	var model=document.getElementById("model");
+	if(model.value=="")
+	{
+	alert("Please enter the model");
+	document.getElementById("model").focus();
+	return false;
+	}
+	var year=document.getElementById("year");
+	if(year.value=="")
+	{
+	alert("Please enter the year");
+	document.getElementById("year").focus();
+	return false;
+	}
+	var model_currency=document.getElementById("model_currency");
+	if(model_currency.value==0)
+	{
+	alert("Please select the model currency");
+	document.getElementById("model_currency").focus();
+	return false;
+	}
+	var model_cost=document.getElementById("model_cost");
+	if(model_cost.value=="")
+	{
+	alert("Please enter the model cost");
+	document.getElementById("model_cost").focus();
+	return false;
 	}
 	
-	var emp_code=document.getElementById("emp_code");
-	if(emp_code.value==0)
+	var maintain_currency=document.getElementById("maintain_currency");
+	if(maintain_currency.value==0)
 	{
-	alert("Please select the employee code");
-	document.getElementById("emp_code").focus();
+	alert("Please select the currency");
+	document.getElementById("maintain_currency").focus();
 	return false;
 	}
-	var incharge_empcode=document.getElementById("incharge_empcode");
-	if(incharge_empcode.value==0)
+	var total_maintain_cost=document.getElementById("total_maintain_cost");
+	if(total_maintain_cost.value=="")
 	{
-	alert("Please select the incharge employeecode");
-	document.getElementById("incharge_empcode").focus();
-	return false;
-	}
-	
-	var totalemployee=document.getElementById("totalemployee");
-	if(totalemployee.value=="")
-	{
-	alert("Please enter the total employees");
-	document.getElementById("totalemployee").focus();
+	alert("Please enter the total maintenance  cost");
+	document.getElementById("total_maintain_cost").focus();
 	return false;
 	}
 	
-	var maintenancecost=document.getElementById("maintenancecost");
-	if(maintenancecost.value=="")
+	var cost_month=document.getElementById("cost_month");
+	if(cost_month.value=="")
 	{
-	alert("Please enter  the maintenancecost");
-	document.getElementById("maintenancecost").focus();
+	alert("Please enter the cost/month");
+	document.getElementById("cost_month").focus();
 	return false;
 	}
-	var total_currency=document.getElementById("total_currency");
-	if(total_currency.value==0)
+	var total_fuel_cost=document.getElementById("total_fuel_cost");
+	if(total_fuel_cost.value=="")
 	{
-	alert("Please select  the total currency");
-	document.getElementById("total_currency").focus();
+	alert("Please enter the total fuel cost");
+	document.getElementById("total_fuel_cost").focus();
+	return false;
+	}
+	var cost_month_fuel=document.getElementById("cost_month_fuel");
+	if(cost_month_fuel.value=="")
+	{
+	alert("Please enter the cost/month");
+	document.getElementById("cost_month_fuel").focus();
 	return false;
 	}
 	
 }
  
 </script>
-<script>
-function myFunction()
-{
-document.getElementById("city").value="";
-document.getElementById("city").focus();
-return false;
-}
-</script>
 <script src="scripts/date.js"></script>
-<link rel="stylesheet" href="style/date.css" media="screen">
-<script type="text/javascript" language="javascript">
-   $(document).ready(function() {
-	$("#city").change(function(event){
-	var selvalue=document.getElementById("city").value;
-	if (selvalue != 0)
-	{
-          $('#display_state').load('ajax_building.php?selvalue='+selvalue);
-	}
-	else
-	{
-	document.getElementById("state").value = "";
-	
-	}
-      });		
-   });
-   </script>
-   <script type="text/javascript" language="javascript">
-   $(document).ready(function() {
-	$("#city_landlord").change(function(event){
-	var selvalue_landlord=document.getElementById("city_landlord").value;
-	if (selvalue_landlord != 0)
-	{
-          $('#display_state_landlord').load('ajax_building.php?selvalue_landlord='+selvalue_landlord);
-	}
-	else
-	{
-	document.getElementById("state_landlord").value = "";
-	
-	}
-      });		
-   });
-   </script>
-   
-   <script type="text/javascript" language="javascript">
-   $(document).ready(function() {
-	$("#building_status").change(function(event){
-	var selvalue_status=document.getElementById("building_status").value;
-	//alert(selvalue_status);
-	if (selvalue_status == 1 )
-	{
-	$("#rent").attr("disabled", "disabled"); 
-	$("#cost").removeAttr("disabled"); 
-	$("#periodfrom").attr("disabled", "disabled");
-	$("#purchasefrom").removeAttr("disabled"); 
-	$("#saleagreement").removeAttr("disabled"); 
-	$("#landlord").attr("disabled", "disabled"); 
-	$("#contactperson").attr("disabled", "disabled"); 
-	$("#address1").attr("disabled", "disabled");  
-	$("#address2").attr("disabled", "disabled");  
-	$("#address3").attr("disabled", "disabled"); 
-	$("#city_landlord").attr("disabled", "disabled"); 
-	$("#state_landlord").attr("disabled", "disabled"); 
-	$("#contactnumber").attr("disabled", "disabled"); 	
-	$("#emailid").attr("disabled", "disabled");  	
-	$("#alternatenumber").attr("disabled", "disabled"); 
-    $("#altperson").attr("disabled", "disabled"); 
-	$("#altpersonnumber").attr("disabled", "disabled"); 
-	$("#leasedeed").attr("disabled", "disabled");
-	$("#renewaldate").attr("disabled", "disabled");   
-	
-	}
-	if (selvalue_status == 2)
-	{
-	$("#rent").removeAttr("disabled"); 
-	$("#cost").attr("disabled", "disabled"); 
-	$("#periodfrom").removeAttr("disabled"); 
-	$("#purchasefrom").attr("disabled", "disabled");
-	$("#saleagreement").attr("disabled", "disabled");
-	
-	$("#landlord").removeAttr("disabled");
-	$("#contactperson").removeAttr("disabled"); 
-	$("#address1").removeAttr("disabled"); 
-	$("#address2").removeAttr("disabled"); 
-	$("#address3").removeAttr("disabled");
-	$("#city_landlord").removeAttr("disabled"); 	
-	$("#state_landlord").removeAttr("disabled"); 	
-	$("#contactnumber").removeAttr("disabled"); 	
-	$("#emailid").removeAttr("disabled"); 	
-	$("#alternatenumber").removeAttr("disabled");
-    $("#altperson").removeAttr("disabled");
-	$("#altpersonnumber").removeAttr("disabled");
-	$("#leasedeed").attr("disabled", "disabled");
-	$("#renewaldate").attr("disabled", "disabled");   	
-	
-	}
-	if (selvalue_status == 3)
-	{
-	$("#rent").attr("disabled", "disabled"); 
-	$("#cost").removeAttr("disabled"); 
-	$("#periodfrom").attr("disabled", "disabled");
-	$("#purchasefrom").attr("disabled", "disabled");
-	$("#saleagreement").attr("disabled", "disabled");
-	$("#landlord").removeAttr("disabled");
-	$("#contactperson").removeAttr("disabled"); 
-	$("#address1").removeAttr("disabled"); 
-	$("#address2").removeAttr("disabled"); 
-	$("#address3").removeAttr("disabled");
-	$("#city_landlord").removeAttr("disabled"); 	
-	$("#state_landlord").removeAttr("disabled"); 	
-	$("#contactnumber").removeAttr("disabled"); 	
-	$("#emailid").removeAttr("disabled"); 	
-	$("#alternatenumber").removeAttr("disabled");
-    $("#altperson").removeAttr("disabled");
-	$("#altpersonnumber").removeAttr("disabled");
-	$("#leasedeed").removeAttr("disabled");
-	$("#renewaldate").removeAttr("disabled");
-	}
-	if (selvalue_status == 0)
-	{
-	$("#rent").removeAttr("disabled"); 
-	$("#cost").removeAttr("disabled");
-	$("#periodfrom").removeAttr("disabled");
-	$("#purchasefrom").removeAttr("disabled"); 
-	$("#saleagreement").removeAttr("disabled"); 
-	$("#landlord").removeAttr("disabled");
-	$("#contactperson").removeAttr("disabled"); 
-	$("#address1").removeAttr("disabled"); 
-	$("#address2").removeAttr("disabled"); 
-	$("#address3").removeAttr("disabled");
-	$("#city_landlord").removeAttr("disabled"); 	
-	$("#state_landlord").removeAttr("disabled"); 	
-	$("#contactnumber").removeAttr("disabled"); 	
-	$("#emailid").removeAttr("disabled"); 	
-	$("#alternatenumber").removeAttr("disabled");
-    $("#altperson").removeAttr("disabled");
-	$("#altpersonnumber").removeAttr("disabled");
-	$("#leasedeed").removeAttr("disabled");
-	$("#renewaldate").removeAttr("disabled");	
-	
-	}
-
-
-      });		
-   });
-   </script>
-   
-   
+<link rel="stylesheet" href="style/date.css" media="screen">   
 <script type="text/javascript">
 	window.onload = function(){
 		new JsDatePick({
 			useMode:2,
-			target:"datepurchase",
+			target:"vdate",
 			dateFormat:"%Y-%m-%d"
 			/*selectedDate:{				This is an example of what the full configuration offers.
 				day:5,						For full documentation about these settings please see the full version of the code.
@@ -929,393 +638,286 @@ return false;
 		
                                 new JsDatePick({
                     useMode:2,
-                    target:"insurancerenewaldue",
+                    target:"insurance_date",
                     dateFormat:"%Y-%m-%d"
 
                 });
 				              new JsDatePick({
                     useMode:2,
-                    target:"insurancedate",
+                    target:"insurance_duedate",
                     dateFormat:"%Y-%m-%d"
 
                 });
 		              new JsDatePick({
                     useMode:2,
-                    target:"renewaldate",
+                    target:"tax_date",
                     dateFormat:"%Y-%m-%d"
 
                 });
+				
+				       new JsDatePick({
+                    useMode:2,
+                    target:"tax_renewal_date",
+                    dateFormat:"%Y-%m-%d"
+
+                });
+				
+				       new JsDatePick({
+                    useMode:2,
+                    target:"next_inspection_date",
+                    dateFormat:"%Y-%m-%d"
+
+                });
+				
+				    new JsDatePick({
+                    useMode:2,
+                    target:"pollution_certificate_date",
+                    dateFormat:"%Y-%m-%d"
+
+                });
+				
+				
+				    new JsDatePick({
+                    useMode:2,
+                    target:"pollution_inspection_date",
+                    dateFormat:"%Y-%m-%d"
+
+                });
+				
 	};
 </script>
-
-<script type="text/javascript" language="javascript">
-   $(document).ready(function() {
-	$("#emp_code").change(function(event){
-	var selvalue_empcode=document.getElementById("emp_code").value;
-	if (selvalue_empcode != 0)
-	{
-          $('#display_empname').load('ajax_building.php?selvalue_empcode='+selvalue_empcode);
-	}
-	else
-	{
-	document.getElementById("empname").value = "";
-	
-	}
-      });		
-   });
-   </script>
-   
-   <script type="text/javascript" language="javascript">
-   $(document).ready(function() {
-	$("#incharge_empcode").change(function(event){
-	var selvalue_incharge_empcode=document.getElementById("incharge_empcode").value;
-	if (selvalue_incharge_empcode != 0)
-	{
-          $('#display_inchargename').load('ajax_building.php?selvalue_incharge_empcode='+selvalue_incharge_empcode);
-	}
-	else
-	{
-	document.getElementById("leadername").value = "";
-	
-	}
-      });		
-   });
-   </script>
 
 <?php
 if(isset($_POST['save']))
 {
-if(isset($_FILES["saleagreement"]["name"]))
+if(isset($_FILES["car_reg_attach"]["name"]))
 {
 $allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["saleagreement"]["name"]);
+$temp = explode(".", $_FILES["car_reg_attach"]["name"]);
 $extension = end($temp);
 if (in_array($extension, $allowedExts))
   {
-  if ($_FILES["saleagreement"]["error"] > 0)
+  if ($_FILES["car_reg_attach"]["error"] > 0)
     {
-    echo "Return Code: " . $_FILES["saleagreement"]["error"] . "<br>";
+    echo "Return Code: " . $_FILES["car_reg_attach"]["error"] . "<br>";
     }
   else
     {
-    if (file_exists("uploads/" . $_FILES["saleagreement"]["name"]))
+    if (file_exists("fms_uploads/" . $_FILES["car_reg_attach"]["name"]))
       {
-      //echo $_FILES["saleagreement"]["name"] . " already exists. ";
-	  $saleagreement="";
+      //echo $_FILES["car_reg_attach"]["name"] . " already exists. ";
+	  $car_reg_attach="";
       }
     else
       {
-	  $saleagreement=$_FILES["saleagreement"]["name"];
-      move_uploaded_file($_FILES["saleagreement"]["tmp_name"],
-      "uploads/" . $_FILES["saleagreement"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["saleagreement"]["name"];
+	  $car_reg_attach=$_FILES["car_reg_attach"]["name"];
+      move_uploaded_file($_FILES["car_reg_attach"]["tmp_name"],
+      "fms_uploads/" . $_FILES["car_reg_attach"]["name"]);
+     // echo "Stored in: " . "fms_uploads/" . $_FILES["car_reg_attach]["name"];
       }
     }
   }
 	else
 	{
-	 $saleagreement="";
+	 $car_reg_attach="";
 	}
 }
 //
-if(isset($_FILES["leasedeed"]["name"]))
+if(isset($_FILES["insurance_attach"]["name"]))
 {
 $allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["leasedeed"]["name"]);
+$temp = explode(".", $_FILES["insurance_attach"]["name"]);
 $extension = end($temp);
 if (in_array($extension, $allowedExts))
   {
-  if ($_FILES["leasedeed"]["error"] > 0)
+  if ($_FILES["insurance_attach"]["error"] > 0)
     {
-    echo "Return Code: " . $_FILES["leasedeed"]["error"] . "<br>";
+    echo "Return Code: " . $_FILES["insurance_attach"]["error"] . "<br>";
     }
   else
     {
-    if (file_exists("uploads/" . $_FILES["leasedeed"]["name"]))
+    if (file_exists("fms_uploads/" . $_FILES["insurance_attach"]["name"]))
       {
-      //echo $_FILES["leasedeed"]["name"] . " already exists. ";
-	  $leasedeed="";
+      //echo $_FILES["insurance_attach"]["name"] . " already exists. ";
+	  $insurance_attach="";
       }
     else
       {
-	  $leasedeed=$_FILES["leasedeed"]["name"];
-      move_uploaded_file($_FILES["leasedeed"]["tmp_name"],
-      "uploads/" . $_FILES["leasedeed"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["leasedeed"]["name"];
+	  $insurance_attach=$_FILES["insurance_attach"]["name"];
+      move_uploaded_file($_FILES["insurance_attach"]["tmp_name"],
+      "fms_uploads/" . $_FILES["insurance_attach"]["name"]);
+     // echo "Stored in: " . "fms_uploads/" . $_FILES["insurance_attach"]["name"];
       }
     }
   }
 	else
 	{
-	 $leasedeed="";
+	 $insurance_attach="";
 	}
 }
 //
 //
-if(isset($_FILES["attach4"]["name"]))
+if(isset($_FILES["tax_attach"]["name"]))
 {
 
 $allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["attach4"]["name"]);
+$temp = explode(".", $_FILES["tax_attach"]["name"]);
 $extension = end($temp);
 if (in_array($extension, $allowedExts))
   {
-  if ($_FILES["attach4"]["error"] > 0)
+  if ($_FILES["tax_attach"]["error"] > 0)
     {
-    echo "Return Code: " . $_FILES["attach4"]["error"] . "<br>";
+    echo "Return Code: " . $_FILES["tax_attach"]["error"] . "<br>";
     }
   else
     {
-    if (file_exists("uploads/" . $_FILES["attach4"]["name"]))
+    if (file_exists("fms_uploads/" . $_FILES["tax_attach"]["name"]))
       {
-      //echo $_FILES["attach4"]["name"] . " already exists. ";
-	  $attach4="";
+      //echo $_FILES["tax_attach"]["name"] . " already exists. ";
+	  $tax_attach="";
       }
     else
       {
-	  $attach4=$_FILES["attach4"]["name"];
-      move_uploaded_file($_FILES["attach4"]["tmp_name"],
-      "uploads/" . $_FILES["attach4"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["attach4"]["name"];
+	  $tax_attach=$_FILES["tax_attach"]["name"];
+      move_uploaded_file($_FILES["tax_attach"]["tmp_name"],
+      "fms_uploads/" . $_FILES["tax_attach"]["name"]);
+     // echo "Stored in: " . "fms_uploads/" . $_FILES["tax_attach"]["name"];
       }
     }
   }
 	else
 	{
-	 $attach4="";
+	 $tax_attach="";
 	}
 }
 //
+
+if(isset($_FILES["pollution_attach"]["name"]))
+{
+
+$allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
+$temp = explode(".", $_FILES["pollution_attach"]["name"]);
+$extension = end($temp);
+if (in_array($extension, $allowedExts))
+  {
+  if ($_FILES["pollution_attach"]["error"] > 0)
+    {
+    echo "Return Code: " . $_FILES["pollution_attach"]["error"] . "<br>";
+    }
+  else
+    {
+    if (file_exists("fms_uploads/" . $_FILES["pollution_attach"]["name"]))
+      {
+      //echo $_FILES["pollution_attach"]["name"] . " already exists. ";
+	  $pollution_attach="";
+      }
+    else
+      {
+	  $pollution_attach=$_FILES["pollution_attach"]["name"];
+      move_uploaded_file($_FILES["pollution_attach"]["tmp_name"],
+      "fms_uploads/" . $_FILES["pollution_attach"]["name"]);
+     // echo "Stored in: " . "fms_uploads/" . $_FILES["pollution_attach"]["name"];
+      }
+    }
+  }
+	else
+	{
+	 $pollution_attach="";
+	}
+}
+
 //
-if(isset($_FILES["attach5"]["name"]))
+if(isset($_FILES["fitness_attach"]["name"]))
 {
 $allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["attach5"]["name"]);
+$temp = explode(".", $_FILES["fitness_attach"]["name"]);
 $extension = end($temp);
 if (in_array($extension, $allowedExts))
   {
-  if ($_FILES["attach5"]["error"] > 0)
+  if ($_FILES["fitness_attach"]["error"] > 0)
     {
-    echo "Return Code: " . $_FILES["attach5"]["error"] . "<br>";
+    echo "Return Code: " . $_FILES["fitness_attach"]["error"] . "<br>";
     }
   else
     {
-    if (file_exists("uploads/" . $_FILES["attach5"]["name"]))
+    if (file_exists("fms_uploads/" . $_FILES["fitness_attach"]["name"]))
       {
-      //echo $_FILES["attach5"]["name"] . " already exists. ";
-	  $attach5="";
+      //echo $_FILES["fitness_attach"]["name"] . " already exists. ";
+	  $fitness_attach="";
       }
     else
       {
-	  $attach5=$_FILES["attach5"]["name"];
-      move_uploaded_file($_FILES["attach5"]["tmp_name"],
-      "uploads/" . $_FILES["attach5"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["attach5"]["name"];
+	  $fitness_attach=$_FILES["fitness_attach"]["name"];
+      move_uploaded_file($_FILES["fitness_attach"]["tmp_name"],
+      "fms_uploads/" . $_FILES["fitness_attach"]["name"]);
+     // echo "Stored in: " . "fms_uploads/" . $_FILES["fitness_attach"]["name"];
       }
     }
   }
 	else
 	{
-	 $attach5="";
+	 $fitness_attach="";
 	}
 }
-//
-//
-if(isset($_FILES["attach6"]["name"]))
-{
-$allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["attach6"]["name"]);
-$extension = end($temp);
-if (in_array($extension, $allowedExts))
-  {
-  if ($_FILES["attach6"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["attach6"]["error"] . "<br>";
-    }
-  else
-    {
-    if (file_exists("uploads/" . $_FILES["attach6"]["name"]))
-      {
-      //echo $_FILES["attach6"]["name"] . " already exists. ";
-	  $attach6="";
-      }
-    else
-      {
-	  $attach6=$_FILES["attach6"]["name"];
-      move_uploaded_file($_FILES["attach6"]["tmp_name"],
-      "uploads/" . $_FILES["attach6"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["attach6"]["name"];
-      }
-    }
-  }
-	else
-	{
-	 $attach6="";
-	}
-}
-//
-//
-if(isset($_FILES["attach7"]["name"]))
-{
-$allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["attach7"]["name"]);
-$extension = end($temp);
-if (in_array($extension, $allowedExts))
-  {
-  if ($_FILES["attach7"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["attach7"]["error"] . "<br>";
-    }
-  else
-    {
-    if (file_exists("uploads/" . $_FILES["attach7"]["name"]))
-      {
-      //echo $_FILES["attach7"]["name"] . " already exists. ";
-	  $attach7="";
-      }
-    else
-      {
-	  $attach7=$_FILES["attach7"]["name"];
-      move_uploaded_file($_FILES["attach7"]["tmp_name"],
-      "uploads/" . $_FILES["attach7"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["attach7"]["name"];
-      }
-    }
-  }
-	else
-	{
-	 $attach7="";
-	}
-}
-//
-//
-if(isset($_FILES["attach8"]["name"]))
-{
-$allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["attach8"]["name"]);
-$extension = end($temp);
-if (in_array($extension, $allowedExts))
-  {
-  if ($_FILES["attach8"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["attach8"]["error"] . "<br>";
-    }
-  else
-    {
-    if (file_exists("uploads/" . $_FILES["attach8"]["name"]))
-      {
-      //echo $_FILES["attach8"]["name"] . " already exists. ";
-	  $attach8="";
-      }
-    else
-      {
-	  $attach8=$_FILES["attach8"]["name"];
-      move_uploaded_file($_FILES["attach8"]["tmp_name"],
-      "uploads/" . $_FILES["attach8"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["attach8"]["name"];
-      }
-    }
-  }
-	else
-	{
-	 $attach8="";
-	}
-}
-//
-//
-if(isset($_FILES["insuranceagreement"]["name"]))
-{
-$allowedExts = array("gif", "jpeg", "jpg", "png","pdf");
-$temp = explode(".", $_FILES["insuranceagreement"]["name"]);
-$extension = end($temp);
-if (in_array($extension, $allowedExts))
-  {
-  if ($_FILES["insuranceagreement"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["insuranceagreement"]["error"] . "<br>";
-    }
-  else
-    {
-    if (file_exists("uploads/" . $_FILES["insuranceagreement"]["name"]))
-      {
-      //echo $_FILES["insuranceagreement"]["name"] . " already exists. ";
-	  $insuranceagreement="";
-      }
-    else
-      {
-	  $insuranceagreement=$_FILES["insuranceagreement"]["name"];
-      move_uploaded_file($_FILES["insuranceagreement"]["tmp_name"],
-      "uploads/" . $_FILES["insuranceagreement"]["name"]);
-     // echo "Stored in: " . "uploads/" . $_FILES["insuranceagreement"]["name"];
-      }
-    }
-  }
-	else
-	{
-	 $insuranceagreement="";
-	}
-}
-//
 $user_id=$_SESSION['user_id'];
-$building_code=$_POST['code'];
-$buildingname=$_POST['buildingname'];
-$building_type=$_POST['building_type'];
-$city=$_POST['city'];
-$state=$_POST['state'];
-$building_status=$_POST['building_status'];
-$datepurchase=$_POST['datepurchase'];
+$vregno=$_POST['vregno'];
+$vdate=$_POST['vdate'];
+$comp_id=$_POST['comp_id'];
+
+$fgmembersite->DBLogin();
+$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
+or die("Opps some thing went wrong");
+mysql_select_db($mysql_database, $bd) or die("Opps some thing went wrong");
+$result_emp_id=mysql_query("select * from master_companies where comp_id=$comp_id",$bd);
+while($row=mysql_fetch_array($result_emp_id))
+{
+$comp_name=$row['comp_name'];
+}			
+$company_name=$comp_name;
+$insurance_number=$_POST['insurance_number'];
+$insurance_company=$_POST['insurance_company'];
+$insurance_date=$_POST['insurance_date'];
 $currency=$_POST['currency'];
-$cost=$_POST['cost'];
-$rent=$_POST['rent'];
-$periodfrom=$_POST['periodfrom'];
-$purchasefrom=$_POST['purchasefrom'];
-$saleagreement=$saleagreement;
-$landlord=$_POST['landlord'];
-$contactperson=$_POST['contactperson'];
-$address1=$_POST['address1'];
-$address2=$_POST['address2'];
-$address3=$_POST['address3'];
-$city_landlord=$_POST['city_landlord'];
-$state_landlord=$_POST['state_landlord'];
-$contactnumber=$_POST['contactnumber'];
-$emailid=$_POST['emailid'];
-$alternatenumber=$_POST['alternatenumber'];
-$altperson=$_POST['altperson'];
-$altpersonnumber=$_POST['altpersonnumber'];
-$leasedeed=$leasedeed;
-$renewaldate=$_POST['renewaldate'];
-$emp_code=$_POST['emp_code'];
-$empname=$_POST['empname'];
-$buildingdesc=$_POST['buildingdesc'];
-$attach4=$attach4;
-$attach5=$attach5;
-$attach6=$attach6;
-$attach7=$attach7;
-$attach8=$attach8;
-$incharge_empcode=$_POST['incharge_empcode'];
-$leadername=$_POST['leadername'];
-$totalemployee=$_POST['totalemployee'];
-$insurancenumber=$_POST['insurancenumber'];
-$insurancedate=$_POST['insurancedate'];
-$attach9=$insuranceagreement;
-$insurancerenewaldue=$_POST['insurancerenewaldue'];
-$maintenancecost=$_POST['maintenancecost'];
-$total_currency=$_POST['total_currency'];
-
-/*
-ca
-$sql=('INSERT INTO building (building_name,building_code,building_type,building_city,building_state,building_status,building_purchase,building_currency,building_cost,building_rent,building_period,building_purchasefrom,building_saleagreement,building_landlord,landlord_contactperson,landlod_address1,landlod_address2,landlod_address3,landlord_city,landlord_state,landlord_contactno,landlord_email,landlord_alternateno,landlord_altperson,landlord_altpersonno,leasedead,leaserenewaldate,companyliason_empcode,companyliason_empname,build_desc,attach4,attach5,attach6,attach7,attach8,incharge_empcode,incharge_empname,total_employess,insurance_number,insurance_date,attach9,renewal_due,total_maintain_cost,total_currency,created_by)VALUES ("'.$buildingname.'","'.$building_code.'","'.$building_type.'","'.$city.'","'.$state.'","'.$building_status.'","'.$datepurchase.'","'.$currency.'","'.$cost.'","'.$rent.'","'.$periodfrom.'","'.$purchasefrom.'","'.$saleagreement.'","'.$landlord.'","'.$contactperson.'","'.$address1.'","'.$address2.'","'.$address3.'","'.$city_landlord.'","'.$state_landlord.'","'.$contactnumber.'","'.$emailid.'","'.$alternatenumber.'","'.$altperson.'","'.$altpersonnumber.'","'.$leasedeed.'","'.$renewaldate.'","'.$emp_code.'","'.$empname.'","'.$buildingdesc.'","'.$attach4.'","'.$attach5.'","'.$attach6.'","'.$attach7.'","'.$attach8.'","'.$incharge_empcode.'","'.$leadername.'","'.$totalemployee.'","'.$insurancenumber.'","'.$insurancedate.'","'.$attach9.'","'.$insurancerenewaldue.'","'.$maintenancecost.'","'.$total_currency.'","'.$user_id.'")');
-
-echo $sql;
-exit;
-*/
-
-if(!mysql_query('INSERT INTO building (building_name,building_code,building_type,building_city,building_state,building_status,building_purchase,building_currency,building_cost,building_rent,building_period,building_purchasefrom,building_saleagreement,building_landlord,landlord_contactperson,landlod_address1,landlod_address2,landlod_address3,landlord_city,landlord_state,landlord_contactno,landlord_email,landlord_alternateno,landlord_altperson,landlord_altpersonno,leasedead,leaserenewaldate,companyliason_empcode,companyliason_empname,build_desc,attach4,attach5,attach6,attach7,attach8,incharge_empcode,incharge_empname,total_employess,insurance_number,insurance_date,attach9,renewal_due,total_maintain_cost,total_currency,created_by)VALUES ("'.$buildingname.'","'.$building_code.'","'.$building_type.'","'.$city.'","'.$state.'","'.$building_status.'","'.$datepurchase.'","'.$currency.'","'.$cost.'","'.$rent.'","'.$periodfrom.'","'.$purchasefrom.'","'.$saleagreement.'","'.$landlord.'","'.$contactperson.'","'.$address1.'","'.$address2.'","'.$address3.'","'.$city_landlord.'","'.$state_landlord.'","'.$contactnumber.'","'.$emailid.'","'.$alternatenumber.'","'.$altperson.'","'.$altpersonnumber.'","'.$leasedeed.'","'.$renewaldate.'","'.$emp_code.'","'.$empname.'","'.$buildingdesc.'","'.$attach4.'","'.$attach5.'","'.$attach6.'","'.$attach7.'","'.$attach8.'","'.$incharge_empcode.'","'.$leadername.'","'.$totalemployee.'","'.$insurancenumber.'","'.$insurancedate.'","'.$attach9.'","'.$insurancerenewaldue.'","'.$maintenancecost.'","'.$total_currency.'","'.$user_id.'")'))
+$insurance_amount=$_POST['insurance_amount'];
+$insurance_duedate=$_POST['insurance_duedate'];
+$tax_number=$_POST['tax_number'];
+$tax_authority=$_POST['tax_authority'];
+$tax_date=$_POST['tax_date'];
+$tax_currency=$_POST['tax_currency'];
+$tax_amount=$_POST['tax_amount'];
+$tax_renewal_date=$_POST['tax_renewal_date'];
+$fit_certificate_no=$_POST['fit_certificate_no'];
+$next_inspection_date=$_POST['next_inspection_date'];
+$certification_currency=$_POST['certification_currency'];
+$certification_cost=$_POST['certification_cost'];
+$pollution_certificate_no=$_POST['pollution_certificate_no'];
+$pollution_certificate_date=$_POST['pollution_certificate_date'];
+$pollution_inspection_date=$_POST['pollution_inspection_date'];
+$pollution_currency=$_POST['pollution_currency'];
+$pollution_certificate_cost=$_POST['pollution_certificate_cost'];
+$make=$_POST['make'];
+$model=$_POST['model'];
+$year=$_POST['year'];
+$model_currency=$_POST['model_currency'];
+$model_cost=$_POST['model_cost'];
+$maintain_currency=$_POST['maintain_currency'];
+$total_maintain_cost=$_POST['total_maintain_cost'];
+$cost_month=$_POST['cost_month'];
+$total_fuel_cost=$_POST['total_fuel_cost'];
+$cost_month_fuel=$_POST['cost_month_fuel'];
+$car_reg_attach=$car_reg_attach;
+$insurance_attach=$insurance_attach;
+$tax_attach=$tax_attach;
+$pollution_attach=$pollution_attach;
+$fitness_attach=$fitness_attach;
+$fgmembersite->DBLogin();
+if(!mysql_query('insert into vehicle SET vehicle_regno="'.$vregno.'",vehichle_reg_date="'.$vdate.'",vehicle_comp_id="'.$comp_id.'",vehicle_company_name="'.$company_name.'",insurance_number="'.$insurance_number.'",insurance_company="'.$insurance_company.'",insurance_date="'.$insurance_date.'",currency="'.$currency.'",insurance_amount="'.$insurance_amount.'",insurance_duedate="'.$insurance_duedate.'",tax_number="'.$tax_number.'",tax_authority="'.$tax_authority.'",tax_date="'.$tax_date.'",tax_currency="'.$tax_currency.'",tax_amount="'.$tax_amount.'",tax_renewal_date="'.$tax_renewal_date.'",fitness_certificate_no="'.$fit_certificate_no.'",next_inspection_date="'.$next_inspection_date.'",certification_currency="'.$certification_currency.'",fitness_certification_cost="'.$certification_cost.'",pollution_certificate_no="'.$pollution_certificate_no.'",pollution_certificate_date="'.$pollution_certificate_date.'",pollution_inspection_date="'.$pollution_inspection_date.'",pollution_currency="'.$pollution_currency.'",pollution_certificate_cost="'.$pollution_certificate_cost.'",make="'.$make.'",model="'.$model.'",year="'.$year.'",model_currency="'.$model_currency.'",model_cost="'.$model_cost.'",maintain_currency="'.$maintain_currency.'",total_maintain_cost="'.$total_maintain_cost.'",cost_month="'.$cost_month.'",total_fuel_cost="'.$total_fuel_cost.'",cost_month_fuel="'.$cost_month_fuel.'",car_reg_attach="'.$car_reg_attach.'",insurance_attach="'.$insurance_attach.'",tax_attach="'.$tax_attach.'",pollution_attach="'.$pollution_attach.'",fitness_attach="'.$fitness_attach.'",created_by="'.$user_id.'"'))
 {
 die('Error: ' . mysql_error());
 }
 
-echo'<script> window.location="building.php?success=true"; </script> ';
+
+echo'<script> window.location="vehicle.php?success=true"; </script> ';
 echo "&nbsp;";
 
 }
@@ -1362,36 +964,6 @@ Building
                     <tr>
 						<td  width="150px"><label style="margin-left:0px;">Vehicle registration number<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<?php
-		 if(!isset($_GET[id]) && $_GET[id] == '') {
-			$cusid					=	"SELECT vehicle_regno FROM  vehicle ORDER BY id DESC";			
-			$cusold					=	mysql_query($cusid) or die(mysql_error());
-			$cuscnt					=	mysql_num_rows($cusold);
-			//$cuscnt					=	0; // comment if live
-			if($cuscnt > 0) {
-				$row_cus					  =	 mysql_fetch_array($cusold);
-				$cusnumber	  =	$row_cus['vehicle_regno'];
-
-				$getcusno						=	abs(str_replace("VH",'',strstr($cusnumber,"VH")));
-				$getcusno++;
-				if($getcusno < 10) {
-					$createdcode	=	"00".$getcusno;
-				} else if($getcusno < 100) {
-					$createdcode	=	"0".$getcusno;
-				} else {
-					$createdcode	=	$getcusno;
-				}
-
-				$customer_code				=	"VH".$createdcode;
-			} else {
-				$customer_code				=	"VH001";
-			}
-		}
-	?>
-						<input type='text' name='code' id='code' class="textbox" value="<?php echo $customer_code;?>" readonly="true"/>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Vehicle registration number<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
 						<input type='text' name='vregno' id='vregno' class="textbox"/>
 						</td>
 						<td  width="150px"><label style="margin-left:0px;">Vehicle registration date<em style="font-style:normal;color:red;">*</em></label></td>
@@ -1399,11 +971,6 @@ Building
 						<td>
 						<input type='text' name='vdate' id='vdate' class="textbox"/>
 						</td>
-						
-						
-                    </tr>
-					
-					<tr>
 						<td  width="150px"><label style="margin-left:0px;">Vehicle registered in company<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
@@ -1422,8 +989,12 @@ Building
 				}
 				echo '</select>';
 							?>
+			
 							</td>
 						
+                    </tr>
+					
+					<tr>		
 						<td  width="150px">
 						
 						<label style="margin-left:0px;">Insurance number<em style="font-style:normal;color:red;">*</em></label>
@@ -1438,13 +1009,14 @@ Building
 							
 				<input type='text' name='insurance_company' id='insurance_company' class="textbox" />
 							</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Insurance Date<em style="font-style:normal;color:red;">*</em></label></td>
+							<td  width="150px"><label style="margin-left:0px;">Insurance Date<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='insurance_date' id='insurance_date' class="textbox"/>
 						</td>
+			
+					</tr>
+					<tr>
+						
 						<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
                      
 						<td>
@@ -1466,13 +1038,14 @@ Building
                         <td>
 						<input type='text' name='insurance_amount' id='insurance_amount' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
 						<td  width="150px"><label style="margin-left:0px;">Insurance renewal due date<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='insurance_duedate' id='insurance_duedate' class="textbox"/>
 						</td>
+			
+					</tr>
+					<tr>
+						
 						<td  width="150px"><label style="margin-left:0px;">Tax number<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
@@ -1483,14 +1056,14 @@ Building
                         <td>
 						<input type='text' name='tax_authority' id='tax_authority' class="textbox"/>
 						</td>
+						<td  width="150px"><label style="margin-left:0px;">Tax date<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='text' name='tax_date' id='tax_date' class="textbox"/>
+						</td>
+						
 			
 					</tr>
 					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Tax date<em style="font-style:normal;color:red;"></em></label></td>
-                        <td>
-						<input type='file' name='tax_date' id='tax_date' class="textbox"/>
-						</td>
-			
 						<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
                      
 						<td>
@@ -1511,13 +1084,13 @@ Building
                         <td>
 						<input type='text' name='tax_amount' id='tax_amount' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Tax renewal date<em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">Tax renewal date<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='tax_renewal_date' id='tax_renewal_date' class="textbox"/>
 						</td>
+					</tr>
+					<tr>
+						
 						<td  width="150px"><label style="margin-left:0px;">Fitness certificate number<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='fit_certificate_no' id='fit_certificate_no' class="textbox"/>
@@ -1526,10 +1099,7 @@ Building
                         <td>
 						<input type='text' name='next_inspection_date' id='next_inspection_date' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
                      
 						<td>
 							<?php
@@ -1545,26 +1115,27 @@ Building
 							echo '</select>';
 							?>
 							</td>
-						
+					</tr>
+					<tr>	
 						<td  width="150px"><label style="margin-left:0px;">Fitness certification cost<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<div id="display_state_landlord">
+					
 						
 						<input type='text' name='certification_cost' id='certification_cost' class="textbox" />
-						
-						</div>
+					
 						</td>
 						<td  width="150px"><label style="margin-left:0px;">Pollution certificate number<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='pollution_certificate_no' id='pollution_certificate_no' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
 						<td  width="150px"><label style="margin-left:0px;">Pollution certificate date<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='pollution_certificate_date' id='pollution_certificate_date' class="textbox"/>
 						</td>
+			
+					</tr>
+					<tr>
+						
 						<td  width="150px"><label style="margin-left:0px;">Next pollution inspection date<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='pollution_inspection_date' id='pollution_inspection_date' class="textbox"/>
@@ -1585,14 +1156,15 @@ Building
 							echo '</select>';
 							?>
 							</td>
+							<td  width="150px"><label style="margin-left:0px;">Pollution certification cost<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='text' name='pollution_certificate_cost' id='pollution_certificate_cost' class="textbox"/>
+						</td>
 			
 					</tr>
 					
 					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Pollution certification cost<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='pollution_certificate_cost' id='pollution_certificate_cost' class="textbox"/>
-						</td>
+						
 						<td  width="150px"><label style="margin-left:0px;">Make<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='make' id='make' class="textbox"/>
@@ -1601,14 +1173,13 @@ Building
                         <td>
 						<input type='text' name='model' id='model' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Year<em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">Year<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
 						<input type='text' name='year' id='year' class="textbox"/>
 							</td>
+					</tr>
+					<tr>
 						<td  width="150px"><label style="margin-left:0px;">currency<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<?php
@@ -1630,10 +1201,7 @@ Building
 						
 						<input type='text' name='model_cost' id='model_cost' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">currency <em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">currency <em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<?php
 							$fgmembersite->DBLogin();
@@ -1648,6 +1216,9 @@ Building
 							echo '</select>';
 							?>
 						</td>
+					</tr>
+					<tr>
+						
 						<td  width="150px"><label style="margin-left:0px;">Total maintenance cost <em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='total_maintain_cost' id='total_maintain_cost' class="textbox"/>
@@ -1656,107 +1227,47 @@ Building
                         <td>
 					<input type='text' name='cost_month' id='cost_month' class="textbox"/>
 						</td>
-			
-					</tr>
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Total fuel cost <em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">Total fuel cost <em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 							<input type='text' name='total_fuel_cost' id='total_fuel_cost' class="textbox"/>
 						</td>
+					</tr>
+					<tr>
 						<td  width="150px"><label style="margin-left:0px;">Cost/month <em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<input type='text' name='cost_month_fuel' id='cost_month_fuel' class="textbox"/>
 						</td>
-						<td  width="150px"><label style="margin-left:0px;">Building in charge emp code<em style="font-style:normal;color:red;">*</em></label></td>
-				
-							<td>
-							<?php
-				$fgmembersite->DBLogin();
-				$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
-				or die("Opps some thing went wrong");
-				mysql_select_db($mysql_database, $bd) or die("Opps some thing went wrong");
-				$result_emp_id=mysql_query("select emp_code,first_name from pim_emp_info  order by emp_id",$bd);
-				echo '<select name="incharge_empcode" id="incharge_empcode" class="selectbox">';
-				echo '<option value="0">Please select a emp code</option>';
-				while($row=mysql_fetch_array($result_emp_id))
-				{
-				echo '<option value="'.$row['emp_code'].'">'.$row['emp_code'].'</option>';
-
-				}
-				echo '</select>';
-				?>
-							</td>
-			
+						<td  width="150px"><label style="margin-left:0px;">Attachment(car registration)<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='file' name='car_reg_attach' id='car_reg_attach' class="textbox"/>
+						</td>
+					<td  width="150px"><label style="margin-left:0px;">Attachment(Insurance)<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='file' name='insurance_attach' id='insurance_attach' class="textbox"/>
+						</td>
 					</tr>
 					
 						<tr>
-						<td  width="150px"><label style="margin-left:0px;">Building in charge leader name<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<div id="display_inchargename">
-						<input type='text' name='leadername' id='leadername' class="textbox"/>
-						</div>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Total number of employee/members in building<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='totalemployee' id='totalemployee' class="textbox"/>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Insurance number<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='insurancenumber' id='insurancenumber' class="textbox"/>
-						</td>
-					     </tr>
-						 
-						 <tr>
-						<td  width="150px"><label style="margin-left:0px;">Insurance Date<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='insurancedate' id='insurancedate' class="textbox"/>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Attachment 9(Insurance Agreement)<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='file' name='insuranceagreement' id='insuranceagreement' class="textbox"/>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Insurance renewal Due<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='insurancerenewaldue' id='insurancerenewaldue' class="textbox"/>
-						</td>
-					     </tr>
-						 
-						 	 <tr>
-						<td  width="150px"><label style="margin-left:0px;">Total maintenance costs<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<input type='text' name='maintenancecost' id='maintenancecost' class="textbox"/>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
-                       
-						<td>
-							<?php
-							$fgmembersite->DBLogin();
-							$result_state=mysql_query("select * from currency");
-							echo '<select name="total_currency" id="total_currency" class="selectbox">';
-							echo '<option value="0">Please select a  currency</option>';
-							while($row=mysql_fetch_array($result_state))
-							{
-							echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
-
-							}
-							echo '</select>';
-							?>
-							</td>
 						
-						<td  width="150px">&nbsp;</td>
+						<td  width="150px"><label style="margin-left:0px;">Attachment(Tax)<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						&nbsp;
+						<input type='file' name='tax_attach' id='tax_attach' class="textbox"/>
+						</td>
+						<td  width="150px"><label style="margin-left:0px;">Attachment(Pollution certificate)<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='file' name='pollution_attach' id='pollution_attach' class="textbox"/>
+						</td>
+						<td  width="150px"><label style="margin-left:0px;">Attachment(Fitness certificate)<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='file' name='fitness_attach' id='fitness_attach' class="textbox"/>
 						</td>
 					     </tr>
-					
-					
-					
 		<tr >
             <td  width="150px" >&nbsp;</td>
-            <td align="center" colspan="5">
+            <td align="center" colspan="4">
 	
 			<input type='submit'  class="flatbutton" name='save' id="save" value='Save'/>
-			<input type='button'  class="flatbutton" name='view' id="view" value='View' onclick="location.href='view_building.php'"/>
+			<input type='button'  class="flatbutton" name='view' id="view" value='View' onclick="location.href='view_vehicle.php'"/>
 		
         
 

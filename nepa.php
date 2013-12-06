@@ -254,7 +254,7 @@ Building
 							}
 							echo '</select>';
 							?>
-							</td>
+						</td>
 					</tr>
 					
 									

@@ -267,8 +267,7 @@ font-size:14px;
 
 div.scroll
 {
-height:440px;
+height:480px;
 overflow-y: scroll;
-overflow-x: hidden;
 width:996px;
 }
