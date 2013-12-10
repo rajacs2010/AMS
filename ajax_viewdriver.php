@@ -43,9 +43,9 @@ $offset = ($pagenum - 1) * $rowsperpage; //WHERE THE RESULTS START FROM
 //FOR RESULTS OF THE PAGE
 if($_GET["searchvalue"]){
 $search=$_GET["searchvalue"];
-    $q = mysql_query("SELECT *,b.name,a.id as eid FROM building a ,building_type b where a.building_type=b.id and a.building_name like '%$search%' ORDER BY a.id LIMIT $offset, $rowsperpage");
+    $q = mysql_query("SELECT * FROM driver where emp_name like '%$search%' ORDER BY id LIMIT $offset, $rowsperpage");
 } else {
-    $q = mysql_query("SELECT *,b.name,a.id as eid  FROM building a ,building_type b where a.building_type=b.id  ORDER BY a.id LIMIT $offset, $rowsperpage");
+    $q = mysql_query("SELECT * FROM driver ORDER BY id LIMIT $offset, $rowsperpage");
 }
 
 $page_nums = mysql_num_rows($q); //NUMBER OF RESULTS FOR THE PAGE
@@ -53,9 +53,9 @@ if ($page_nums!=0)
 {
 if($_GET["searchvalue"]){
 $search=$_GET["searchvalue"];
-	 $total_q = mysql_query("SELECT *,b.name,a.id as eid  FROM building a ,building_type b where a.building_type=b.id and  a.building_name like '%$search%' "); //FOR THE ALL RESULTS
+	 $total_q = mysql_query("SELECT * FROM driver where emp_name like '%$search%' "); //FOR THE ALL RESULTS
 } else {
-    $total_q = mysql_query("SELECT *,b.name,a.id as eid  FROM building a ,building_type b where a.building_type=b.id "); //FOR THE ALL RESULTS
+    $total_q = mysql_query("SELECT * FROM driver"); //FOR THE ALL RESULTS
 }
 
 $total_nums = mysql_num_rows($total_q); //TOTAL NUMBER OF RESULTS
@@ -69,10 +69,10 @@ echo '
 <table class="owntable">
 <thead>
 <tr>
-<th>Building Name</th>
-<th>Building code</th>
-<th>Building type</th>
-<th>Building status</th>
+<th>Driver Code</th>
+<th>Name</th>
+<th>Employee Code</th>
+<th>Driving License Number</th>
 <th>Edit</th>
 <th>Delete</th>
 
@@ -84,27 +84,13 @@ echo '
     {
 	
 	
-        $content = $r["building_name"];
-		$emp_id = $r["eid"];
-		$building_code=$r["building_code"];
-		$name=$r["name"];
-		
-		$status=$r["building_status"];
-		
-		if($status== 1)
-		{
-		$building_status="owned";
-		}
-		elseif($status== 2)
-		{
-		$building_status="rented";
-		}
-		else
-		{
-		$building_status="lease";
-		}
-        echo '<tr><td>'.$content.'</td><td>'.$building_code.'</td><td>'.$name.'</td><td>'.$building_status.'</td><td><a href=edit_building.php?id='.$emp_id.'><img src="images/user_edit.png"/></a></td>
-		<td><a href=view_building.php?delete_id='.$emp_id.'&delete=1><img src="images/delete.png" onclick="return show_confirm()"/></a></td></tr>';
+        $driver_code = $r["driver_code"];
+		$emp_id = $r["id"];
+		$emp_name=$r["emp_name"];
+		$emp_code=$r["emp_code"];
+		$license_number=$r["license_number"];
+        echo '<tr><td>'.$driver_code.'</td><td>'.$emp_name.'</td><td>'.$emp_code.'</td><td>'.$license_number.'</td><td><a href=edit_driver.php?id='.$emp_id.'><img src="images/user_edit.png"/></a></td>
+		<td><a href=view_driver.php?delete_id='.$emp_id.'&delete=1><img src="images/delete.png" onclick="return show_confirm()"/></a></td></tr>';
 	
     }
     echo '</tbody></table>';
@@ -155,12 +141,12 @@ echo '
 } 
 else {
     //OTHERWISE...
-    header("Location: ajax_viewbuilding.php"); //WILL REDIRECT TO THE FIRST PAGE OF RESULTS
+    header("Location: ajax_viewdriver.php"); //WILL REDIRECT TO THE FIRST PAGE OF RESULTS
 }
 }
 else
 {
-$q_initial = mysql_query("SELECT * FROM building");
+$q_initial = mysql_query("SELECT * FROM driver");
 $page_nums_initial = mysql_num_rows($q_initial);
 if ($page_nums_initial !=0)
 {
@@ -168,10 +154,10 @@ echo '
 <table class="owntable">
 <thead>
 <tr>
-<th>Building Name</th>
-<th>Building code</th>
-<th>Building type</th>
-<th>Building status</th>
+<th>Driver Code</th>
+<th>Name</th>
+<th>Employee Code</th>
+<th>Driving License Number</th>
 <th>Edit</th>
 <th>Delete</th>
 
