@@ -185,7 +185,7 @@ while($row = mysql_fetch_array($result))
 
     </table>
 	</form>
-	<div id="search" style="float:right;padding-right:220px;">
+	<div id="search" style="float:right;padding-right:20px;">
 
 <table>
 <tr>

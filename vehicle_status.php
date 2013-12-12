@@ -25,31 +25,31 @@ exit;
 ?>
 <script>
 $(function(){
-$("#content").load("ajax_city.php");
+$("#content").load("ajax_vehicle_status.php");
 
 //PAGE NUMBER onClick FUNCTION
 $(".page").live("click", function(){
 var page = $(this).attr("id");
-$("#content").load("ajax_city.php?page="+page);
+$("#content").load("ajax_vehicle_status.php?page="+page);
 });
 });
 </script>
 <script>
 function validateForm()
 {
-var cityname=document.getElementById("city").value;
-	if(cityname=="")
+var vehicle_reg_id=document.getElementById("vehicle_reg_id").value;
+	if(vehicle_reg_id==0)
 	{
-		alert("Please enter the name");
-		document.getElementById("city").focus();
+		alert("Please select the vehicle registration number");
+		document.getElementById("vehicle_reg_id").focus();
 		return false;
 	}
 	
-	var statename=document.getElementById("state").value;
-	if(statename==0)
+	var status_id=document.getElementById("status_id").value;
+	if(status_id==0)
 	{
-		alert("Please select a state");
-		document.getElementById("state").focus();
+		alert("Please select the vehicle status");
+		document.getElementById("status_id").focus();
 		return false;
 	}
 }
@@ -62,7 +62,7 @@ $(document).ready(function(){
   $("#imageclick").click(function(){
  var searchvalue=$('#searchname').val();
  var searchvalue=$.trim(searchvalue).replace(/ /g,'+');
-$("#content").load("ajax_city.php?searchvalue="+searchvalue);
+$("#content").load("ajax_vehicle_status.php?searchvalue="+searchvalue);
   });
 });
 </script>
@@ -70,8 +70,9 @@ $("#content").load("ajax_city.php?searchvalue="+searchvalue);
 <script>
 function myFunction()
 {
-document.getElementById("city").value="";
-document.getElementById("city").focus();
+document.getElementById("vehicle_reg_id").value=0;
+document.getElementById("vehicle_reg_id").focus();
+document.getElementById("status_id").value=0;
 return false;
 }
 </script>
@@ -80,15 +81,15 @@ if(isset($_POST['save']))
 {
 
 $user_id=$_SESSION['user_id'];
-$city=$_POST['city'];
-$state=$_POST['state'];
-if ($city != "")
+$vehicle_reg_id=$_POST['vehicle_reg_id'];
+$status_id=$_POST['status_id'];
+if ($vehicle_reg_id!= "")
 {
-if(!mysql_query('INSERT INTO city (name,state_id,created_by)VALUES ("'.$city.'","'.$state.'","'.$user_id.'")'))
+if(!mysql_query('INSERT INTO vehicle_status (vehicle_reg_id,status_id,created_by)VALUES ("'.$vehicle_reg_id.'","'.$status_id.'","'.$user_id.'")'))
 {
 die('Error: ' . mysql_error());
 }
-echo '<div class="success_message">city created successfully</div>';
+echo '<div class="success_message">vehicle status created successfully</div>';
 }
 else
 {
@@ -102,16 +103,16 @@ if(isset($_POST['edit']))
 {
 $edit_id=$_POST['edit_id'];
 $user_id=$_SESSION['user_id'];
-$city=$_POST['city'];
-$state=$_POST['state'];
+$vehicle_reg_id=$_POST['vehicle_reg_id'];
+$status_id=$_POST['status_id'];
 $current_date=date("Y-m-d H:i:s");
-if ($city != "")
+if ($vehicle_reg_id != "")
 {
-if(!mysql_query('UPDATE city SET name="'.$city.'",state_id="'.$state.'",updated_at="'.$current_date.'",updated_by="'.$user_id.'" WHERE id="'.$edit_id.'" '))
+if(!mysql_query('UPDATE vehicle_status SET vehicle_reg_id="'.$vehicle_reg_id.'",status_id="'.$status_id.'",updated_at="'.$current_date.'",updated_by="'.$user_id.'" WHERE id="'.$edit_id.'" '))
 {
 die('Error: ' . mysql_error());
 }
-echo '<div class="success_message">city  updated successfully</div>';
+echo '<div class="success_message">vehicle status  updated successfully</div>';
 }
 else
 {
@@ -120,11 +121,36 @@ echo '<div class="error_message">The name should not be empty</div>';
 }
 
 ?>
+
+<?php
+if(isset($_GET['delete_id']) && intval($_GET['delete_id'])) 
+{
+if ($_GET['delete'] ==1)
+{
+$id=$_GET['delete_id'];
+$query = "SELECT * FROM nepa where id=$id"; 
+
+$result = mysql_query($query);
+if($result === FALSE) {
+    die(mysql_error()); // TODO: better error handling
+}
+
+ if(!mysql_query("delete FROM vehicle_status where id=$id"))
+{
+die('Error: ' . mysql_error());
+}
+ echo '<div class="success_message">vehicle status deleted successfully</div>';
+
+ // 
+  //echo "hi";
+}
+}
+?>
 <?php
 if(isset($_GET['id']) && intval($_GET['id'])) 
 {
 $id=$_GET['id'];
-$query = "SELECT * FROM city where id=$id"; 
+$query = "SELECT * FROM vehicle_status where id=$id"; 
 
 $result = mysql_query($query);
 if($result === FALSE) {
@@ -133,21 +159,21 @@ if($result === FALSE) {
 
 while($row = mysql_fetch_array($result))
 {
-	$name=$row['name'];
-	$state_id=$row['state_id'];
+	$vehicle_reg_id=$row['vehicle_reg_id'];
+	$status_id=$row['status_id'];
 	
 }
 }
 ?>
 <div id="inside_content">
 &nbsp;
-<form id='city_save' action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="return validateForm()"  method='post' accept-charset='UTF-8'>
+<form id='vehicle_status_save' action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="return validateForm()"  method='post' accept-charset='UTF-8'>
 
 <table align="center" width="40%"CELLPADDING="3" CELLSPACING="0"  style=" border: 0px solid #00BFFF; border-top:0px;font-family: Arial;
     font-size: 12px;"      >
   <tr>
     <th style=" height: 29px;text-align: left;font-size: 14px;text-align:center">
-city
+vehicle status
     </th>
   </tr>
   <tr>
@@ -159,31 +185,58 @@ city
                 <table style="font-family:Arial;" width="100%"  cellpadding="10px" class="htmlForm" cellspacing="0" border="0">
 
                     <tr>
-                       <td  width="150px"><label style="margin-left:0px;">city<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<?php if(isset($_GET['id'])){ ?>
-							<input type='text' name='city' id='city' class="textbox" value="<?php echo $name; ?>"/>
 				
-						<?php } else {?>
-							<input type='text' name='city' id='city' class="textbox"/>
-						<?php }?>
-						</td>
-                    </tr>
-					
-					<tr>
-				
-			<td  width="150px"><label style="margin-left:0px;">State<em style="font-style:normal;color:red;">*</em></label></td>
+			<td  width="150px"><label style="margin-left:0px;">Vehicle Registration<em style="font-style:normal;color:red;">*</em></label></td>
 				
 					<td>
 					<?php
 			if(isset($_GET['id']))
 			{ 		
-				$result_state=mysql_query("select * from state");
-				echo '<select name="state" id="state" class="selectbox">';
-				echo '<option value="0">Please select a  state</option>';
+				$result_state=mysql_query("select * from vehicle");
+				echo '<select name="vehicle_reg_id" id="vehicle_reg_id" class="selectbox">';
+				echo '<option value="0">Please select a  vehicle register number</option>';
 				while($row=mysql_fetch_array($result_state))
 				{
-				if($row['id'] == $state_id){
+				if($row['id'] == $vehicle_reg_id){
+						  $isSelected = ' selected="selected"'; // if the option submited in form is as same as this row we add the selected tag
+					 } else {
+						  $isSelected = ''; // else we remove any tag
+					 }
+					 echo "<option value='".$row['id']."'".$isSelected.">".$row['vehicle_regno']."</option>";
+				}
+				echo '</select>';
+					
+			}
+			else
+			{
+
+					$result_state=mysql_query("select * from vehicle");
+					echo '<select name="vehicle_reg_id" id="vehicle_reg_id" class="selectbox">';
+					echo '<option value="0">Please select a  vehicle register number</option>';
+					while($row=mysql_fetch_array($result_state))
+					{
+					echo '<option value="'.$row['id'].'">'.$row['vehicle_regno'].'</option>';
+
+					}
+					echo '</select>';
+			}
+
+?>
+					</td>
+					
+				
+			<td  width="150px"><label style="margin-left:0px;">Status<em style="font-style:normal;color:red;">*</em></label></td>
+				
+					<td>
+					<?php
+			if(isset($_GET['id']))
+			{ 		
+				$result_state=mysql_query("select * from status");
+				echo '<select name="status_id" id="status_id" class="selectbox">';
+				echo '<option value="0">Please select a vehicle status</option>';
+				while($row=mysql_fetch_array($result_state))
+				{
+				if($row['id'] == $status_id){
 						  $isSelected = ' selected="selected"'; // if the option submited in form is as same as this row we add the selected tag
 					 } else {
 						  $isSelected = ''; // else we remove any tag
@@ -196,9 +249,9 @@ city
 			else
 			{
 
-					$result_state=mysql_query("select * from state");
-					echo '<select name="state" id="state" class="selectbox">';
-					echo '<option value="0">Please select a  state</option>';
+				$result_state=mysql_query("select * from status");
+				echo '<select name="status_id" id="status_id" class="selectbox">';
+				echo '<option value="0">Please select a vehicle status</option>';
 					while($row=mysql_fetch_array($result_state))
 					{
 					echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
@@ -212,7 +265,7 @@ city
 					</tr>
 		<tr >
             <td  width="150px" >&nbsp;</td>
-            <td align="right">
+            <td align="right" colspan="2">
 			<?php if(isset($_GET['id'])){ ?>
 			<input type='submit'  class="flatbutton" name='edit' id="edit" value='Save'/>
 			<input type='hidden' name='edit_id' id='edit_id' value='<?php echo $_GET['id'];?>'/>
@@ -254,7 +307,7 @@ city
 </div>
 <br/>
 <br/>
-	<div id="content" ></div>
+	<div id="content"></div>
 
 
 

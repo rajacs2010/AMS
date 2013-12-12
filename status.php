@@ -25,23 +25,23 @@ exit;
 ?>
 <script>
 $(function(){
-$("#content").load("ajax_assignment_type.php");
+$("#content").load("ajax_status.php");
 
 //PAGE NUMBER onClick FUNCTION
 $(".page").live("click", function(){
 var page = $(this).attr("id");
-$("#content").load("ajax_assignment_type.php?page="+page);
+$("#content").load("ajax_status.php?page="+page);
 });
 });
 </script>
 <script>
 function validateForm()
 {
-var assignment=document.getElementById("assignment").value;
-	if(assignment=="")
+var statusname=document.getElementById("status").value;
+	if(statusname=="")
 	{
-		alert("Please enter the assignment type");
-		document.getElementById("assignment").focus();
+		alert("Please enter the name");
+		document.getElementById("status").focus();
 		return false;
 	}
 }
@@ -54,7 +54,7 @@ $(document).ready(function(){
   $("#imageclick").click(function(){
  var searchvalue=$('#searchname').val();
  var searchvalue=$.trim(searchvalue).replace(/ /g,'+');
-$("#content").load("ajax_assignment_type.php?searchvalue="+searchvalue);
+$("#content").load("ajax_status.php?searchvalue="+searchvalue);
   });
 });
 </script>
@@ -62,8 +62,8 @@ $("#content").load("ajax_assignment_type.php?searchvalue="+searchvalue);
 <script>
 function myFunction()
 {
-document.getElementById("assignment").value="";
-document.getElementById("assignment").focus();
+document.getElementById("status").value="";
+document.getElementById("status").focus();
 return false;
 }
 </script>
@@ -72,14 +72,14 @@ if(isset($_POST['save']))
 {
 
 $user_id=$_SESSION['user_id'];
-$assignment=$_POST['assignment'];
-if ($assignment != "")
+$status=$_POST['status'];
+if ($status != "")
 {
-if(!mysql_query('INSERT INTO assignment_type (name,created_by)VALUES ("'.$assignment.'","'.$user_id.'")'))
+if(!mysql_query('INSERT INTO status (name,created_by)VALUES ("'.$status.'","'.$user_id.'")'))
 {
 die('Error: ' . mysql_error());
 }
-echo '<div class="success_message">Assignment type created successfully</div>';
+echo '<div class="success_message">status created successfully</div>';
 }
 else
 {
@@ -93,15 +93,15 @@ if(isset($_POST['edit']))
 {
 $edit_id=$_POST['edit_id'];
 $user_id=$_SESSION['user_id'];
-$assignment=$_POST['assignment'];
+$status=$_POST['status'];
 $current_date=date("Y-m-d H:i:s");
-if ($assignment != "")
+if ($status != "")
 {
-if(!mysql_query('UPDATE assignment_type SET name="'.$assignment.'",updated_at="'.$current_date.'",updated_by="'.$user_id.'" WHERE id="'.$edit_id.'" '))
+if(!mysql_query('UPDATE status SET name="'.$status.'",updated_at="'.$current_date.'",updated_by="'.$user_id.'" WHERE id="'.$edit_id.'" '))
 {
 die('Error: ' . mysql_error());
 }
-echo '<div class="success_message">Assignment type updated successfully</div>';
+echo '<div class="success_message">status  updated successfully</div>';
 }
 else
 {
@@ -114,7 +114,7 @@ echo '<div class="error_message">The name should not be empty</div>';
 if(isset($_GET['id']) && intval($_GET['id'])) 
 {
 $id=$_GET['id'];
-$query = "SELECT * FROM assignment_type where id=$id"; 
+$query = "SELECT * FROM status where id=$id"; 
 
 $result = mysql_query($query);
 if($result === FALSE) {
@@ -130,13 +130,13 @@ while($row = mysql_fetch_array($result))
 ?>
 <div id="inside_content">
 &nbsp;
-<form id='allocation_type_save' action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="return validateForm()"  method='post' accept-charset='UTF-8'>
+<form id='status_save' action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="return validateForm()"  method='post' accept-charset='UTF-8'>
 
 <table align="center" width="40%"CELLPADDING="3" CELLSPACING="0"  style=" border: 0px solid #00BFFF; border-top:0px;font-family: Arial;
     font-size: 12px;"      >
   <tr>
     <th style=" height: 29px;text-align: left;font-size: 14px;text-align:center">
- Assignment type
+status
     </th>
   </tr>
   <tr>
@@ -148,13 +148,13 @@ while($row = mysql_fetch_array($result))
                 <table style="font-family:Arial;" width="100%"  cellpadding="10px" class="htmlForm" cellspacing="0" border="0">
 
                     <tr>
-                       <td  width="150px"><label style="margin-left:0px;">Name<em style="font-style:normal;color:red;">*</em></label></td>
+                       <td  width="150px"><label style="margin-left:0px;">status<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<?php if(isset($_GET['id'])){ ?>
-							<input type='text' name='assignment' id='aassignment' class="textbox" value="<?php echo $name; ?>"/>
+							<input type='text' name='status' id='status' class="textbox" value="<?php echo $name; ?>"/>
 				
 						<?php } else {?>
-							<input type='text' name='assignment' id='assignment' class="textbox"/>
+							<input type='text' name='status' id='status' class="textbox"/>
 						<?php }?>
 						</td>
                     </tr>

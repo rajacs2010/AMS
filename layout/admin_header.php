@@ -208,8 +208,8 @@ Welcome <?php ?><?= $fgmembersite->UserFullName(); ?>
 						<ul>
 							<li class="current"><a href="allocation_type.php">Allocation type</a></li>
 							<li><a href="assignment_type.php">Assignment type</a></li>
-							<!--<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
+							<li><a href="status.php">Status</a></li>
+						<!--	<li><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>-->
 						</ul>
 
@@ -222,6 +222,7 @@ Welcome <?php ?><?= $fgmembersite->UserFullName(); ?>
 							<li><a href="driver.php">Driver</a></li>
 							<li><a href="driver_allocate.php">Driver Allocation</a></li>
 							<li><a href="vehicle_assignment.php">vehicle assignment</a></li>
+							<li><a href="vehicle_status.php">vehicle status</a></li>
 						</ul>
 					</li>
 				</ul>
