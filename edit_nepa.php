@@ -153,15 +153,8 @@ if(!mysql_query('update nepa SET building_code="'.$building_code.'",nepa_meter_n
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_nepa.php?id='.$edit_id.'&success=true"; </script> ';
-
-
-
-
+$fgmembersite->RedirectToURL("edit_nepa.php?id=$edit_id&success=true");
 }
-
-
-
 ?>
 
 

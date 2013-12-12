@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,7 +20,6 @@
 		<script src="scripts/hoverIntent.js"></script>
 		<script src="scripts/superfish.js"></script>
 		<script>
-
 		(function($){ //create closure so we can safely use $ as alias for jQuery
 
 			$(document).ready(function(){
@@ -127,9 +129,8 @@ background-color:#00BFFF;
 </td><td width="10%" align="right"><a href="#"><img alt="fmcl" src="images/kcs.png" border="0" width="70" height="70"/></a></td></tr></tbody>
 <tr>
 <td width="22%">
-Welcome <?= $fgmembersite->UserFullName(); ?>
+Welcome <?php ?><?= $fgmembersite->UserFullName(); ?>
 </td>
-
 </tr></table>
 </div>
 </div>
@@ -139,7 +140,6 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
  <div class="bodycontent">
 <div class="content">
 		<ul class="sf-menu" id="example">
-		
 		<!---- first menu start------>
 			<li class="current">
 				<a href="#">Admin Management System</a>
@@ -206,42 +206,22 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 					<li class="current">
 						<a href="#">Value Sets</a>
 						<ul>
-							<li class="current"><a href="#">menu item</a></li>
+							<li class="current"><a href="allocation_type.php">Allocation type</a></li>
+							<li><a href="assignment_type.php">Assignment type</a></li>
+							<!--<li><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
+							<li><a href="#">menu item</a></li>-->
 						</ul>
 
 					</li>
 					<li class="current">
 						<a href="#">Master Data</a>
 						<ul>
-							<li class="current"><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Value </a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">menu item</a>
-						<ul>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
-							<li><a href="#">menu item</a></li>
+							<li class="current"><a href="vehicle.php">Vehicle</a></li>
+							<li><a href="#">Vehicle allocation type</a></li>
+							<li><a href="driver.php">Driver</a></li>
+							<li><a href="driver_allocate.php">Driver Allocation</a></li>
+							<li><a href="vehicle_assignment.php">vehicle assignment</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -254,14 +234,9 @@ Welcome <?= $fgmembersite->UserFullName(); ?>
 				<a href="#">Admin</a>
 			<ul>
 			<li class="current">
-						<a href="logout.php">Log out</a>
-						
+						<a href="logout.php">Log out</a>	
 					</li>
 					</ul>
 					</li>
-			<!---------fourth menu end------>
-				
+			<!---------fourth menu end------>		
 		</ul>
-
-
-

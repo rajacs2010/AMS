@@ -916,7 +916,7 @@ if(!mysql_query('update vehicle SET vehicle_regno="'.$vregno.'",vehichle_reg_dat
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_vehicle.php?id='.$edit_id.'&success=true"; </script> ';
+$fgmembersite->RedirectToURL("edit_vehicle.php?id=$edit_id&success=true");
 echo "&nbsp;";
 
 }

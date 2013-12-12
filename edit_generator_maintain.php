@@ -157,7 +157,7 @@ if(!mysql_query('update  generator_maintain SET generator_code="'.$generator_cod
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_generator_maintain.php?id='.$edit_id.'&success=true"; </script> ';
+$fgmembersite->RedirectToURL("edit_generator_maintain.php?id=$edit_id&success=true");
 
 
 }

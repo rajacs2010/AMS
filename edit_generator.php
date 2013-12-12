@@ -344,8 +344,7 @@ if(!mysql_query('update generator SET generator_code="'.$generator_code.'",gener
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_generator.php?id='.$edit_id.'&success=true"; </script> ';
-
+$fgmembersite->RedirectToURL("edit_generator.php?id=$edit_id&success=true");
 
 }
 ?>

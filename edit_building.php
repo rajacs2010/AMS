@@ -1410,8 +1410,7 @@ if(!mysql_query('UPDATE building SET building_name="'.$buildingname.'",building_
 {
 die('Error: ' . mysql_error());
 }
-
-echo'<script> window.location="edit_building.php?id='.$edit_id.'&success=true"; </script> ';
+$fgmembersite->RedirectToURL("edit_building.php?id=$edit_id&success=true");
 echo "&nbsp;";
 
 }

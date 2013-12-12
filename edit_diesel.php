@@ -173,8 +173,7 @@ if(!mysql_query('update diesel SET generator_code="'.$generator_code.'",building
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_diesel.php?id='.$edit_id.'&success=true"; </script> ';
-
+$fgmembersite->RedirectToURL("edit_diesel.php?id=$edit_id&success=true");
 
 }
 ?>

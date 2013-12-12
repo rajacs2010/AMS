@@ -202,7 +202,7 @@ if(!mysql_query('update driver SET driver_code="'.$driver_code.'",emp_name="'.$e
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="edit_driver.php?id='.$edit_id.'&success=true"; </script> ';
+$fgmembersite->RedirectToURL("edit_driver.php?id=$edit_id&success=true");
 echo "&nbsp;";
 
 }
