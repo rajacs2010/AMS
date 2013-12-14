@@ -210,6 +210,7 @@ Welcome <?php ?><?= $fgmembersite->UserFullName(); ?>
 							<li><a href="assignment_type.php">Assignment type</a></li>
 							<li><a href="status.php">Status</a></li>
 							<li><a href="transaction_type.php">Transaction type</a></li>
+							<li><a href="department.php">Division/Department</a></li>
 						<!--	<li><a href="#">menu item</a></li>
 							<li><a href="#">menu item</a></li>-->
 						</ul>
