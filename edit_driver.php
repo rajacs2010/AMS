@@ -214,7 +214,7 @@ echo "&nbsp;";
 if(isset($_GET['id']) && intval($_GET['id'])) 
 {
 $id=$_GET['id'];
-$query = "SELECT *,b.name  FROM driver a , state b  where a.city_id=b.id and a.id=$id"; 
+$query = "SELECT *,c.name as state_name  FROM driver a ,city b, state c  where a.city_id=b.id and b.state_id=c.id and a.id=$id"; 
 
 $result = mysql_query($query);
 if($result === FALSE) {
@@ -235,7 +235,7 @@ $alt_contact_number=$row['alt_contact_number'];
 $license_number=$row['license_number'];
 $license_date=$row['license_date'];
 $renewal_date=$row['renewal_date'];
-$state_name=$row['name'];
+$state_name=$row['state_name'];
 }
 }
 ?>

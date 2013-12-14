@@ -916,8 +916,7 @@ if(!mysql_query('insert into vehicle SET vehicle_regno="'.$vregno.'",vehichle_re
 die('Error: ' . mysql_error());
 }
 
-
-echo'<script> window.location="vehicle.php?success=true"; </script> ';
+$fgmembersite->RedirectToURL("vehicle.php?success=true");
 echo "&nbsp;";
 
 }

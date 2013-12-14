@@ -200,7 +200,9 @@ if(!mysql_query('insert into driver SET driver_code="'.$driver_code.'",emp_name=
 {
 die('Error: ' . mysql_error());
 }
-$fgmembersite->RedirectToURL("driver.php?success=true");
+echo'<script> window.location="driver.php?success=true"; </script> ';
+
+
 }
 
 
@@ -216,14 +218,14 @@ if ($_GET['success']=="true")
 {
 
 ?>
-<span class="success_message">Driver created successfully</span>
+<span class="success_message">Vehicle transactions  created successfully</span>
 <?php
 }
 
 }
 ?>
 &nbsp;
-<div class="header_bold">Driver creation</div>
+<div class="header_bold">Vehicle transactions</div>
 <div class="scroll_not">
 <form id='driver_save' action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="return validateForm();"  method='post' accept-charset='UTF-8' enctype="multipart/form-data">
 
@@ -246,19 +248,59 @@ Building
                 <table style="font-family:Arial;" width="100%"  cellpadding="10px" class="htmlForm" cellspacing="0" border="0">
 
                     <tr>
-						<td  width="150px"><label style="margin-left:0px;">Driver code<em style="font-style:normal;color:red;">*</em></label></td>
+						<td  width="150px"><label style="margin-left:0px;">Vehicle registration number<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<?php
+						$result_state=mysql_query("select * from vehicle");
+					echo '<select name="vehicle_reg_id" id="vehicle_reg_id" class="selectbox">';
+					echo '<option value="0">Please select a  vehicle register number</option>';
+					while($row=mysql_fetch_array($result_state))
+					{
+					echo '<option value="'.$row['id'].'">'.$row['vehicle_regno'].'</option>';
+
+					}
+					echo '</select>';
+		           ?>
+				 		
+						</td>
+						<td  width="150px"><label style="margin-left:0px;">Date<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<input type='text' name='transaction_date' id='transaction_date' class="textbox"/>
+						</td>
+						<td  width="150px"><label style="margin-left:0px;">Transaction type<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<?php
+						$result_state=mysql_query("select * from transaction_type");
+					echo '<select name="transaction_type_id" id="transaction_type_id" class="selectbox">';
+					echo '<option value="0">Please select a  transaction type</option>';
+					while($row=mysql_fetch_array($result_state))
+					{
+					echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+
+					}
+					echo '</select>';
+		           ?>
+				 		
+						</td>
+						
+						
+						
+                    </tr>
+					
+					<tr>
+						<td  width="150px"><label style="margin-left:0px;">Transaction number<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
 						<?php
 		 if(!isset($_GET[id]) && $_GET[id] == '') {
-			$cusid					=	"SELECT driver_code FROM  driver ORDER BY id DESC";			
+			$cusid					=	"SELECT transaction_number FROM  vehicle_transaction ORDER BY id DESC";			
 			$cusold					=	mysql_query($cusid) or die(mysql_error());
 			$cuscnt					=	mysql_num_rows($cusold);
 			//$cuscnt					=	0; // comment if live
 			if($cuscnt > 0) {
 				$row_cus					  =	 mysql_fetch_array($cusold);
-				$cusnumber	  =	$row_cus['driver_code'];
+				$cusnumber	  =	$row_cus['transaction_number'];
 
-				$getcusno						=	abs(str_replace("DR",'',strstr($cusnumber,"DR")));
+				$getcusno						=	abs(str_replace("TR",'',strstr($cusnumber,"TR")));
 				$getcusno++;
 				if($getcusno < 10) {
 					$createdcode	=	"00".$getcusno;
@@ -268,75 +310,50 @@ Building
 					$createdcode	=	$getcusno;
 				}
 
-				$customer_code				=	"DR".$createdcode;
+				$customer_code				=	"TR".$createdcode;
 			} else {
-				$customer_code				=	"DR001";
+				$customer_code				=	"TR001";
 			}
 		}
 	?>
 						<input type='text' name='code' id='code' class="textbox" value="<?php echo $customer_code;?>" readonly="true"/>
 						</td>
-						<td  width="150px"><label style="margin-left:0px;">Name<em style="font-style:normal;color:red;">*</em></label></td>
+						
+						<td  width="150px"><label style="margin-left:0px;">Vendor code<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
-							<?php
-				$fgmembersite->DBLogin();
-				$bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) 
-				or die("Opps some thing went wrong");
-				mysql_select_db($mysql_database, $bd) or die("Opps some thing went wrong");
-				$result_emp_id=mysql_query("select emp_code,first_name from pim_emp_info  order by emp_id",$bd);
-				echo '<select name="driver_name" id="driver_name" class="selectbox">';
-				echo '<option value="0">Please select a name</option>';
-				while($row=mysql_fetch_array($result_emp_id))
-				{
-				echo '<option value="'.$row['emp_code'].'">'.$row['first_name'].'</option>';
-
-				}
-				echo '</select>';
-				?>
-							</td>
-						<td  width="150px"><label style="margin-left:0px;">Employee code<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<div id="display_empcode">
-						<input type='text' name='emp_code' id='emp_code' class="textbox"/>
-						</div>
-						</td>
-						
-						
-						
-                    </tr>
-					
-					<tr>
-						<td  width="150px"><label style="margin-left:0px;">Address line 1<em style="font-style:normal;color:red;">*</em></label></td>
-				
-							<td>
-							<textarea name='address1' id='address1' class="textbox"></textarea>
+							<input type='text' name='vendor_code' id='vendor_code' class="textbox" />
 					
 							</td>
-						
-						<td  width="150px"><label style="margin-left:0px;">Address line 2<em style="font-style:normal;color:red;">*</em></label></td>
+						<td  width="150px"><label style="margin-left:0px;">Vendor name<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
-							<textarea name='address2' id='address2' class="textbox"></textarea>
-					
-							</td>
-						<td  width="150px"><label style="margin-left:0px;">Address line 3<em style="font-style:normal;color:red;">*</em></label></td>
-				
-							<td>
-							<textarea name='address3' id='address3' class="textbox"></textarea>
+						<input type='text' name='vendor_name' id='vendor_name' class="textbox" />
 					
 							</td>
 			
 					</tr>
 					<tr>
-						<td  width="150px"><label style="margin-left:0px;">City<em style="font-style:normal;color:red;">*</em></label></td>
+						<td  width="150px"><label style="margin-left:0px;">Uom<em style="font-style:normal;color:red;">*</em></label></td>
 				
 							<td>
+						<input type='text' name='uom' id='uom' class="textbox" />
+					
+							</td>
+						<td  width="150px"><label style="margin-left:0px;">Units<em style="font-style:normal;color:red;">*</em></label></td>
+                       
+						<td>
+								<input type='text' name='units' id='units' class="textbox"/>
+							</td>
+						
+			<td  width="150px"><label style="margin-left:0px;">Currency<em style="font-style:normal;color:red;">*</em></label></td>
+                       
+						<td>
 							<?php
 							$fgmembersite->DBLogin();
-							$result_state=mysql_query("SELECT a.id  as id ,a.name,b.name as state_name FROM city a, state b where a.state_id=b.id");
-							echo '<select name="city_driver" id="city_driver" >';
-							echo '<option value="0">Please select a  City</option>';
+							$result_state=mysql_query("select * from currency");
+							echo '<select name="total_currency" id="total_currency" class="selectbox">';
+							echo '<option value="0">Please select a  currency</option>';
 							while($row=mysql_fetch_array($result_state))
 							{
 							echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
@@ -344,57 +361,36 @@ Building
 							}
 							echo '</select>';
 							?>
-						</td>
-						
-						<td  width="150px"><label style="margin-left:0px;">State<em style="font-style:normal;color:red;">*</em></label></td>
-                        <td>
-						<div id="display_state_driver">
-						
-						<input type='text' name='state_driver' id='state_driver' class="textbox" />
-						
-						</div>
-						</td>
-						<td  width="150px"><label style="margin-left:0px;">Contact number<em style="font-style:normal;color:red;">*</em></label></td>
-                       
-						<td>
-								<input type='text' name='contact_number' id='contact_number' class="textbox"/>
 							</td>
-						
-			
 					</tr>
 					<tr>
-					<td  width="150px"><label style="margin-left:0px;">Alternate contact number<em style="font-style:normal;color:red;">*</em></label></td>
+					
+						<td  width="150px"><label style="margin-left:0px;">Rate<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<input type='text' name='alt_contact_number' id='alt_contact_number' class="textbox"/>
+						<input type='text' name='rate' id='rate' class="textbox"/>
 						</td>
-						<td  width="150px"><label style="margin-left:0px;">Driving license number<em style="font-style:normal;color:red;">*</em></label></td>
+						<td  width="150px"><label style="margin-left:0px;">Cost<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<input type='text' name='licence_number' id='licence_number' class="textbox"/>
+						<input type='text' name='cost' id='cost' class="textbox"/>
 						</td>
-						<td  width="150px"><label style="margin-left:0px;">License date<em style="font-style:normal;color:red;">*</em></label></td>
+						<td  width="150px"><label style="margin-left:0px;">Description<em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<input type='text' name='license_date' id='license_date' class="textbox"/>
+						<textarea name='desc' id='desc' class="areatext"></textarea>
 						</td>
-						
 					
 			
 					</tr>
-					
-					<tr>
-						
-						<td  width="150px"><label style="margin-left:0px;">Renewal date<em style="font-style:normal;color:red;">*</em></label></td>
+					<td  width="150px"><label style="margin-left:0px;"><em style="font-style:normal;color:red;">*</em></label></td>
                         <td>
-						<input type='text' name='renewal_date' id='renewal_date' class="textbox"/>
+						<textarea name='desc' id='desc' class="areatext"></textarea>
 						</td>
-						
-					</tr>			
-		<tr >
+						<td  width="150px"><label style="margin-left:0px;">Description<em style="font-style:normal;color:red;">*</em></label></td>
+                        <td>
+						<textarea name='desc' id='desc' class="areatext"></textarea>
+						</td>			
+		<tr>
             <td  width="150px" >&nbsp;</td>
-            <td align="center" colspan="5">
-	
-			<input type='submit'  class="flatbutton" name='save' id="save" value='Save'/>
-			<input type='button'  class="flatbutton" name='view' id="view" value='View' onclick="location.href='view_driver.php'"/>
-	
+            <td align="center" colspan="5">	
             </td>
         </tr>
 		

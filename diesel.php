@@ -171,7 +171,7 @@ if(!mysql_query('insert into diesel SET generator_code="'.$generator_code.'",bui
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="diesel.php?success=true"; </script> ';
+$fgmembersite->RedirectToURL("diesel.php?success=true");
 
 
 }

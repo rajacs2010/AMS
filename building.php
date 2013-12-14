@@ -1314,8 +1314,7 @@ if(!mysql_query('INSERT INTO building (building_name,building_code,building_type
 {
 die('Error: ' . mysql_error());
 }
-
-echo'<script> window.location="building.php?success=true"; </script> ';
+$fgmembersite->RedirectToURL("building.php?success=true");
 echo "&nbsp;";
 
 }

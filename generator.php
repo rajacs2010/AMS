@@ -290,9 +290,7 @@ if(!mysql_query('insert into generator SET generator_code="'.$generator_code.'",
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="generator.php?success=true"; </script> ';
-
-
+$fgmembersite->RedirectToURL("generator.php?success=true");
 }
 
 

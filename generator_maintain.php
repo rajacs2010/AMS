@@ -155,9 +155,7 @@ if(!mysql_query('insert into generator_maintain SET generator_code="'.$generator
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="generator_maintain.php?success=true"; </script> ';
-
-
+$fgmembersite->RedirectToURL("generator_maintain.php?success=true");
 }
 
 

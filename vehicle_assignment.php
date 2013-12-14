@@ -201,7 +201,7 @@ if(!mysql_query('insert into vehicle_assignment SET  assignment_no="'.$code.'",v
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="vehicle_assignment.php?success=true"; </script> ';
+$fgmembersite->RedirectToURL("vehicle_assignment.php?success=true");
 }
 
 

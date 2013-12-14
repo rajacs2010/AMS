@@ -151,9 +151,7 @@ if(!mysql_query('insert into nepa SET building_code="'.$building_code.'",nepa_me
 {
 die('Error: ' . mysql_error());
 }
-echo'<script> window.location="nepa.php?success=true"; </script> ';
-
-
+$fgmembersite->RedirectToURL("nepa.php?success=true");
 }
 
 
